@@ -3,8 +3,8 @@
   
   type Props = {
     tags: Tag[]
-    selectedTagId: string | undefined,
-    belongsTo: string | undefined
+    selectedTagId?: string,
+    belongsTo?: string
   }
 
   const {tags, selectedTagId, belongsTo} = defineProps<Props>();
@@ -16,6 +16,9 @@
       return 'link'
     }
   }
+
+
+
 </script>
 
 <template>

@@ -1,2 +1,330 @@
+@use "sass:math";
+
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap');
+
+$font1: "ヒラギノ角ゴ ProN W3","HiraKakuProN-W3","ヒラギノ角ゴ Pro W3","HiraKakuPro-W3","メイリオ",Meiryo, sans-serif;
+$font2: "YuMincho",'Yu Mincho',"ヒラギノ明朝 Pro W6", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝","HGS明朝B", serif;
+$font3 : 'Oswald', sans-serif;
+$font4 : 'Kiwi Maru', serif;
+
+
+$col1:#0a376e;
+$colList: #0a376e;
+
+$break1 : 897;
+
+@mixin px_vw($f,$w){
+  font-size: 1vw * $f / $w * 100;
+}
+
+@function pvv($f,$w){
+  @return (math.div(1vw * $f, $w) * 100);
+}
+@function pvmin($f,$w){
+  @return (math.div(1vmin * $f, $w) * 100);
+}
+@function pvvs($f1,$f2,$f3,$f4,$w){
+  @return (math.div(1vw * $f1, $w) * 100) (math.div(1vw * $f2, $w) * 100) (math.div(1vw * $f3, $w) * 100) (math.div(1vw * $f4, $w) * 100);
+}
+@function pvvsw($f1,$f2,$w){
+  @return (math.div(1vw * $f1, $w) * 100) (math.div(1vw * $f2, $w) * 100) (math.div(1vw * $f1, $w) * 100) (math.div(1vw * $f2, $w) * 100);
+}
+
+@function fit_size($b : 190, $s : 50, $w_m : 780, $w_s : 320){
+  $diffw : $w_m - $w_s;
+  $fsize_diff : $b - $s;
+  $fsize_s : $s + 0px;
+  $width_s : $w_s + 0px;
+  @return calc(#{$fsize_diff} * calc((100vw - #{$width_s}) / #{$diffw}) + #{$fsize_s});
+}
+
+
+@mixin fonts_top_size($b : 190, $s : 50, $diffw : 780, $w_s : 320){
+  $fsize_diff : $b - $s;
+  $fsize_s : $s + 0px;
+  $width_s : $w_s + 0px;
+  font-size: calc(#{$fsize_diff} * calc((100vw - #{$width_s}) / #{$diffw}) + #{$fsize_s});
+}
+
+@mixin foo_size($b : 190, $s : 50, $w_m : 780, $w_s : 320,$w : width){
+  $diffw : $w_m - $w_s;
+  $fsize_diff : $b - $s;
+  $fsize_s : $s + 0px;
+  $width_s : $w_s + 0px;
+  #{$w} : calc(#{$fsize_diff} * calc((100vw - #{$width_s}) / #{$diffw}) + #{$fsize_s});
+}
+
+@mixin foo_size_i($b : 190, $s : 50, $w_m : 780, $w_s : 320,$w : width){
+  $diffw : $w_m - $w_s;
+  $fsize_diff : $b - $s;
+  $fsize_s : $s + 0px;
+  $width_s : $w_s + 0px;
+  #{$w} : calc(#{$fsize_diff} * calc((100vw - #{$width_s}) / #{$diffw}) + #{$fsize_s}) !important;
+}
+
+
+@keyframes show{
+  from{
+      opacity: 0;
+  }
+  to{
+      opacity: 1;
+  }
+}
+@keyframes hide{
+  from{
+      opacity: 1;
+  }
+  to{
+      opacity: 0;
+  }
+}
+
+$barH : .6em;
+
+@keyframes bar1{
+  0%{
+    transform:translateY(0) rotate(45deg);
+  }
+  50%{
+    transform:translateY(0) rotate(0);
+  }
+  100%{
+    transform:translateY(-$barH) rotate(0)
+  }
+}
+
+@keyframes on-bar1{
+  0%{
+    transform:translateY(-$barH) rotate(0);
+  }
+  50%{
+    transform:translateY(0) rotate(0);
+  }
+  100%{
+    transform:translateY(0) rotate(45deg);
+  }
+}
+
+@keyframes bar3{
+  0%{
+    transform:translateY(0) rotate(-45deg);
+  }
+  50%{
+    transform:translateY(0) rotate(0);
+  }
+  100%{
+    transform:translateY($barH) rotate(0)
+  }
+}
+
+@keyframes on-bar3{
+  0%{
+    transform:translateY($barH) rotate(0);
+  }
+  50%{
+    transform:translateY(0) rotate(0);
+  }
+  100%{
+    transform:translateY(0) rotate(-45deg);
+  }
+}
+
+[data-scroll="opt0"]{
+  transform:translateY(20px);
+  opacity: 0;
+  &.animIn{
+    transition:transform .8s , opacity .8s ;
+    transform:translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+@for $i from 1 through 50{
+  [data-scroll="opt#{$i}"]{
+    transform:translateY(20px);
+    opacity: 0;
+    &.animIn{
+      transition:transform .8s #{$i*0.1}#{s} , opacity .8s  #{$i*0.1}#{s};
+      transform:translateY(0);
+      opacity: 1;
+    }
+  }
+
+  [data-scroll="opx#{$i}"]{
+    transform:translateX(20px);
+    opacity: 0;
+    &.animIn{
+      transition:transform .8s #{$i*0.1}#{s} , opacity .8s  #{$i*0.1}#{s};
+      transform:translateX(0);
+      opacity: 1;
+    }
+  }
+
+
+  [data-scroll="opxl#{$i}"]{
+    transform:translateX(-20px);
+    opacity: 0;
+    &.animIn{
+      transition:transform .8s #{$i*0.1}#{s} , opacity .8s  #{$i*0.1}#{s};
+      transform:translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+
+[data-scroll="opt"]{
+  transform:translateY(20px);
+  opacity: 0;
+  &.animIn{
+    transition:transform .8s  , opacity .8s ;
+    transform:translateY(0);
+    opacity: 1;
+  }
+}
+
+[data-scroll="opx-l"]{
+  transform:translateX(-20px);
+  opacity: 0;
+  &.animIn{
+    transition:transform .8s  , opacity .8s ;
+    transform:translateX(0);
+    opacity: 1;
+  }
+}
+[data-scroll="opx-r"]{
+  transform:translateX(20px);
+  opacity: 0;
+  &.animIn{
+    transition:transform .8s  , opacity .8s ;
+    transform:translateX(0);
+    opacity: 1;
+  }
+}
+
+[data-scroll="op"]{
+  opacity: 0;
+  &.animIn{
+    transition:opacity 1.5s .5s;
+    opacity: 1;
+  }
+}
+
+
+.spinner {
+  margin: -2.5rem 0 0 -2.5rem;//60px auto;
+  font-size: 5px;
+  position: fixed;
+  z-index: 2000;
+  top:50%;
+  left:50%;
+  text-indent: -9999em;
+
+  border-top: 2px solid $col1;
+  border-right: 2px solid $col1;
+  border-bottom: 2px solid $col1;
+  border-left: 2px solid rgba($col1, 0.4);
+
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+
+.spinner,
+	.spinner:after {
+	  border-radius: 50%;
+	  width: 5rem;
+	  height: 5rem;
+	}
+	@-webkit-keyframes load8 {
+	  0% {
+	    -webkit-transform: rotate(0deg);
+	    transform: rotate(0deg);
+	  }
+	  100% {
+	    -webkit-transform: rotate(360deg);
+	    transform: rotate(360deg);
+	  }
+	}
+	@keyframes load8 {
+	  0% {
+	    -webkit-transform: rotate(0deg);
+	    transform: rotate(0deg);
+	  }
+	  100% {
+	    -webkit-transform: rotate(360deg);
+	    transform: rotate(360deg);
+	  }
+	}
+
+
+
+.hov{
+  .image {
+    overflow: hidden;
+    img{
+      transition:transform .5s;
+      transform:scale(1);
+    }
+  }
+  &:hover{
+    a{
+      opacity: 1;
+    }
+    .image{
+      img{
+        transform:scale(1.08);
+      }
+    }
+  }
+}
+
+*{
+  box-sizing: border-box;
+}
+img{
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+a{
+  color:inherit;
+  text-decoration: none;
+  outline:none;
+  &:hover{
+    opacity: .8;
+  }
+}
+
+html{
+  font-size: 62.5%;
+  &.gmaps{
+    height:100%;
+  }
+}
+
+body{
+  line-height: 1.7;
+  font-size: 1.6rem;
+  font-family: $font1;
+}
+strong{
+  font-weight: 700;
+}
+
+
+
 
 $col:#eee;
+
+@media screen and (min-width: 641px) {
+}
+
+@media screen and (min-width: 897px) {
+}
