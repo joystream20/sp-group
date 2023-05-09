@@ -1,12 +1,12 @@
 import type { MicroCMSListContent } from "microcms-js-sdk";
 
-export type Tag = {
+export type Category = {
   name: string
 } & MicroCMSListContent
 
-export type Post = {
+export type Topics = {
   title:string,
-  tag: Tag[],
+  category: Category[],
   text: string
 } & MicroCMSListContent
 

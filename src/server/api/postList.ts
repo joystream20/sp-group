@@ -1,10 +1,10 @@
 import client from './client'
-import { Post } from '../../types/blog'
+import { Topics } from '../../types/blog'
 
 export default defineEventHandler(async(e) => {
   const queries = getQuery(e)
-  const data = await client.getList<Post>({
-    endpoint: 'post',
+  const data = await client.getList<Topics>({
+    endpoint: 'topics',
     queries: queries
     // queries:{
     //   filters: 'publishedAt[contains]2022'

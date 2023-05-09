@@ -3,12 +3,12 @@ import { MicroCMSQueries } from 'microcms-js-sdk';
 
 const route = useRoute()
 const page = Number(route.params.id || 1)
-const type:string = "post"
+const type:string = "topics"
 </script>
 
 <template>
   <div>
-    <h2>products - page{{ page }}</h2>
-    <Product :page="page" :belongsTo="type" />
+    <h2>topics - page{{ page }}</h2>
+    <Topic :page="page" :belongsTo="type" />
   </div>
 </template>

@@ -8,7 +8,7 @@ type Props = {
 const { numPages, current } = defineProps<Props>()
 
 function getPath(p:number){
-  return `/products/page/${p}`
+  return `/topics/page/${p}`
 }
 
 function getClass(page:number, current:number){

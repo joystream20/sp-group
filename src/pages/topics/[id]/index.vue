@@ -1,6 +1,6 @@
 
 <script setup lang="ts">
-import { Post } from "~/types/blog";
+import { Topics } from "~/types/blog";
 import { ref } from 'vue'
 import { MicroCMSQueries } from 'microcms-js-sdk';
 
@@ -49,6 +49,8 @@ article.value.shortCode.map(_code => {
 })
 }
 
+const icatch = article.value.icatch.url
+
 </script>
 
 <template>
@@ -56,13 +58,16 @@ article.value.shortCode.map(_code => {
     <div class="main">
       <span class="published">{{ article.publishedAt }}</span>
       <h1 class="title">{{ article.title }}</h1>
+      <div v-if="icatch" class="image">
+        <img :src="icatch" alt="">
+      </div>
       <div class="md" v-html="_body"></div>
       <div class="pager">
         <div v-if="prevPost.contents.length > 0 ">
-          <NuxtLink :to="`/products/${prevPost.contents[0].id}`"><span class="arrow">&lt;</span></NuxtLink>
+          <NuxtLink :to="`/topics/${prevPost.contents[0].id}`"><span class="arrow">&lt;</span></NuxtLink>
         </div>
         <div v-if="nextPost.contents.length > 0 ">
-          <NuxtLink :to="`/products/${nextPost.contents[0].id}`"><span class="arrow">&gt;</span></NuxtLink>
+          <NuxtLink :to="`/topics/${nextPost.contents[0].id}`"><span class="arrow">&gt;</span></NuxtLink>
         </div>
       </div>
     </div>

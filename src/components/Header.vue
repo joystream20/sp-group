@@ -9,7 +9,7 @@
           <nuxtLink :to="`/about`">about</nuxtLink>
         </li>
         <li class="gnavList-item">
-          <nuxtLink :to="`/products`">products</nuxtLink>
+          <nuxtLink :to="`/topics`">topics</nuxtLink>
         </li>
         <li class="gnavList-item">
           <nuxtLink :to="`/news`">news</nuxtLink>
