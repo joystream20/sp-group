@@ -12,8 +12,8 @@ const { topics } = defineProps<Props>()
 <template>
   <div>
     <article class="article" v-for="topic in topics" :key="topic.id">
-        <span class="published">{{ topic.publishedAt }}</span>
-        <span class="tag" v-for="cat in topic.category" :key="cat.id">{{ cat.name }}</span>
+        <span class="published">{{ $formatDate(String(topic.publishedAt)) }}</span>
+        <span class="cat" v-for="cat in topic.category" :key="cat.id">{{ cat.name }}</span>
         <NuxtLink :to="`/topics/${topic.id}`">
           <h2 class="title">{{ topic.title }}</h2>
         </NuxtLink>

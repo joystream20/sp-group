@@ -1,7 +1,14 @@
 
 <script setup lang="ts">
+import { onMounted } from 'vue';
 const {data: topics} = await useFetch('/api/postList')
 const type:string = "topics"
+
+const emit = defineEmits(['p_type'])
+
+onMounted(() => {
+  emit('p_type', 'topics')
+})
 </script>
 
 <template>

@@ -1,6 +1,13 @@
 <script setup lang="ts">
+import { onMounted } from 'vue';
 const {data: news} = await useFetch('/api/newsList')
-console.log(news)
+
+const emit = defineEmits(['p_type'])
+
+onMounted(() => {
+  emit('p_type', 'news')
+})
+
 </script>
 
 <template>

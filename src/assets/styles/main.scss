@@ -1,3 +1,16 @@
-body{
-  background:#abc;
+
+.site{
+  &-header{
+    background-color: $col1;
+    // color:$col2;
+    .gnavList{
+      &-item{
+        padding:1em 1.5em;
+      }
+    }
+  }
+  
+  &-footer{
+    background-color: $col3;
+  }
 }

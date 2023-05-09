@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import { MicroCMSQueries } from 'microcms-js-sdk';
+import { onMounted } from 'vue';
+
+const emit = defineEmits(['p_type'])
+
+onMounted(() => {
+  emit('p_type', 'topics')
+})
 
 const route = useRoute()
 const page = Number(route.params.id || 1)

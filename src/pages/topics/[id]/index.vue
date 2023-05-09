@@ -1,7 +1,7 @@
 
 <script setup lang="ts">
 import { Topics } from "~/types/blog";
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { MicroCMSQueries } from 'microcms-js-sdk';
 
 const route = useRoute();
@@ -51,12 +51,18 @@ article.value.shortCode.map(_code => {
 
 const icatch = article.value.icatch.url
 
+const emit = defineEmits(['p_type'])
+
+onMounted(() => {
+  emit('p_type', 'topics')
+})
+
 </script>
 
 <template>
   <div>
     <div class="main">
-      <span class="published">{{ article.publishedAt }}</span>
+      <span class="published">{{ $formatDate(String(article.publishedAt)) }}</span>
       <h1 class="title">{{ article.title }}</h1>
       <div v-if="icatch" class="image">
         <img :src="icatch" alt="">

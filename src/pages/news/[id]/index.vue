@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 const route = useRoute()
 const id = String(route.params.id)
 
@@ -9,6 +10,12 @@ const {data: article} = await useFetch(`/api/newsDetail`, {
 if(!article.value){
   throw createError({statusCode: 404, statusMessage: 'Page Not Found'})
 }
+
+const emit = defineEmits(['p_type'])
+
+onMounted(() => {
+  emit('p_type', 'news')
+})
 </script>
 
 <template>

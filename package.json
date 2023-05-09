@@ -9,12 +9,14 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.6.7",
     "@types/node": "^18",
     "nuxt": "^3.4.2",
     "sass": "^1.62.1"
   },
   "dependencies": {
     "dayjs": "^1.11.7",
-    "microcms-js-sdk": "^2.3.3"
+    "microcms-js-sdk": "^2.3.3",
+    "modern-css-reset": "^1.4.0"
   }
 }

@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     apiKey:API_KEY,
     serviceDomain:SERVICE_DOMAIN
   },
-  css:['~/assets/css/reset.css','~/assets/css/style.css','@/assets/styles/main.scss'],
+  modules: ["@nuxtjs/tailwindcss"],
+  css:['modern-css-reset','~/assets/css/reset.css','~/assets/css/style.css','@/assets/styles/main.scss'],
   vite: {
     css: {
       preprocessorOptions: {
