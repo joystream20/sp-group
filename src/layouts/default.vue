@@ -1,6 +1,5 @@
 <template>
-  <div class="site-container">
-    <p>layouts/default</p>
+  <div id="siteContainer" class="site-container">
     <slot />
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main class="site-main">
     <h2>company</h2>
-  </div>
+  </main>
 </template>

@@ -38,7 +38,7 @@ if(!article.value){
   throw createError({statusCode: 404, statusMessage: 'Page Not Found'})
 }
 
-_body = article.value.text;
+_body = article.value.content;
 
 if(article.value.shortCode){
 
@@ -57,25 +57,33 @@ onMounted(() => {
   emit('p_type', 'topics')
 })
 
+definePageMeta({
+  pageTransition: {
+    name: 'page',
+    mode: 'out-in',
+    onBeforeEnter: (el) => {
+      console.log('before enter')
+    }
+  }
+})
+
 </script>
 
 <template>
-  <div>
-    <div class="main">
-      <span class="published">{{ $formatDate(String(article.publishedAt)) }}</span>
-      <h1 class="title">{{ article.title }}</h1>
-      <div v-if="icatch" class="image">
-        <img :src="icatch" alt="">
+  <main class="site-main">
+    <span class="published">{{ $formatDate(String(article.publishedAt)) }}</span>
+    <h1 class="title">{{ article.title }}</h1>
+    <div v-if="icatch" class="image">
+      <img :src="icatch" alt="">
+    </div>
+    <div class="md" v-html="_body"></div>
+    <div class="pager">
+      <div v-if="prevPost.contents.length > 0 ">
+        <NuxtLink :to="`/topics/${prevPost.contents[0].id}`"><span class="arrow">&lt;</span></NuxtLink>
       </div>
-      <div class="md" v-html="_body"></div>
-      <div class="pager">
-        <div v-if="prevPost.contents.length > 0 ">
-          <NuxtLink :to="`/topics/${prevPost.contents[0].id}`"><span class="arrow">&lt;</span></NuxtLink>
-        </div>
-        <div v-if="nextPost.contents.length > 0 ">
-          <NuxtLink :to="`/topics/${nextPost.contents[0].id}`"><span class="arrow">&gt;</span></NuxtLink>
-        </div>
+      <div v-if="nextPost.contents.length > 0 ">
+        <NuxtLink :to="`/topics/${nextPost.contents[0].id}`"><span class="arrow">&gt;</span></NuxtLink>
       </div>
     </div>
-  </div>
+  </main>
 </template>

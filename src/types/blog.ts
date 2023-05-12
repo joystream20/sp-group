@@ -7,7 +7,7 @@ export type Category = {
 export type Topics = {
   title:string,
   category: Category[],
-  text: string
+  content: string
 } & MicroCMSListContent
 
 export type News = {

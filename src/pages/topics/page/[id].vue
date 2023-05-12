@@ -14,8 +14,8 @@ const type:string = "topics"
 </script>
 
 <template>
-  <div>
+  <main class="site-main">
     <h2>topics - page{{ page }}</h2>
     <Topic :page="page" :belongsTo="type" />
-  </div>
+  </main>
 </template>

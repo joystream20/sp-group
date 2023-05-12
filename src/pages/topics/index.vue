@@ -12,9 +12,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
+  <main class="site-main">
     <h2>Topics-topXXXXX</h2>
     <p>this is topics top page</p>
     <Topic :page=1 :belongsTo="type"/>
-  </div>
+  </main>
 </template>

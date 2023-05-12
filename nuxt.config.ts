@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     apiKey:API_KEY,
     serviceDomain:SERVICE_DOMAIN
   },
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss","@nuxtjs/device"],
   css:['modern-css-reset','~/assets/css/reset.css','~/assets/css/style.css','@/assets/styles/main.scss'],
   vite: {
     css: {
@@ -17,5 +17,9 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  app: {
+    pageTransition: {name: 'page', mode: 'out-in'
+  }
   }
 })

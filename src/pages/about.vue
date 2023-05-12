@@ -9,9 +9,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="content">
+  <main class="site-main">
     <h2 class="ttl">about</h2>
-  </div>
+  </main>
 </template>
 
 <style lang="scss" scoped>
