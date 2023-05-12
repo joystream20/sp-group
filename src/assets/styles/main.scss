@@ -2,6 +2,7 @@
 .site{
   &-header{
     background-color: $col1;
+    top:0;
     // color:$col2;
     .navContainer{
       
@@ -95,7 +96,7 @@
   }
 
   &-container{
-    
+    // margin-top:calc(var(--hh) - 1px);
     &.on{
       .site-main{
         
@@ -123,7 +124,7 @@
 }
 
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 896px) {
   .site{
     &-header{
       .navContainer{

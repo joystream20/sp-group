@@ -10,7 +10,7 @@ defineProps<Props>()
 const { isMobile, isTablet, isDesktop } = useDevice()
 const state = ref<boolean>(false)
 const btnClass = ref<string>('')
-const breakPoint = <string>"769"
+const breakPoint = <string>"896"
 // const __hh = ref<number>()
 const gnavH = ref<string>('')
 
@@ -125,7 +125,7 @@ const btnClick = () => {
 
 </script>
 <template>
-  <header id="siteHeader" :class="`${btnClass} site-header tw-fixed tw-w-full tw-text-white`">
+  <header id="siteHeader" :class="`${btnClass} site-header tw-fixed tw-z-10 tw-w-full tw-text-white`">
     <div class="site-header__inner u_mx1100 tw-flex tw-justify-between tw-items-center">
       <h1 class="site-title" v-if="p_type == 'top'"><img src="@/assets/images/img_logo.png" width="78" ></h1>
       <p class="site-title" v-else><nuxtLink :to="`/`"><img src="@/assets/images/img_logo.png" width="78"></nuxtLink></p>
