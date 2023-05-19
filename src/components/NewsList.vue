@@ -10,10 +10,15 @@ const { news } = defineProps<Props>()
 </script>
 
 <template>
-  <div>
-    <article v-for="post in news" class="article" :key="post.id">
-      <NuxtLink :to="`/news/${post.id}`">
-        <h2>{{ post.title }}</h2>
+  <div class="newsList">
+    <article v-for="post in news" class="newsList-item" :key="post.id">
+      <div class="catContainer">
+        <span class="cat tw-text-sm" v-for="cat in post.category" :key="cat.id">
+          <NuxtLink :to="`/cats/${cat.id}/page/1`">{{ cat.name }}</NuxtLink>
+        </span>
+      </div>
+      <NuxtLink :to="`/news/${post.id}`" class="tw-flex tw-py-3">
+        <span class="published">{{ $formatDate(String(post.publishedAt)) }}</span><h2 class="ttl tw-font-bold tw-ml-20">{{ post.title }}</h2>
       </NuxtLink>
     </article>
   </div>

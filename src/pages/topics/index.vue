@@ -12,7 +12,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="site-main">
+  <main class="site-main topics">
     <h2>Topics-topXXXXX</h2>
     <p>this is topics top page</p>
     <Topic :page=1 :belongsTo="type"/>

@@ -24,6 +24,7 @@ const cat_queries: MicroCMSQueries = {
 if(catId){
   queries.filters=`category[contains]${catId}`
 }
+// console.log(queries)
 // console.log(belongsTo,page)
 if(belongsTo){
   cat_queries.filters=`belongsto[contains]${belongsTo}`

@@ -126,7 +126,7 @@ const btnClick = () => {
 </script>
 <template>
   <header id="siteHeader" :class="`${btnClass} site-header tw-fixed tw-z-10 tw-w-full tw-text-white`">
-    <div class="site-header__inner u_mx1100 tw-flex tw-justify-between tw-items-center">
+    <div class="site-header__inner tw-flex tw-justify-between tw-items-center">
       <h1 class="site-title" v-if="p_type == 'top'"><img src="@/assets/images/img_logo.png" width="78" ></h1>
       <p class="site-title" v-else><nuxtLink :to="`/`"><img src="@/assets/images/img_logo.png" width="78"></nuxtLink></p>
       <div id="navContainer" class="navContainer tw-fixed tw-w-full md:tw-w-fit md:tw-relative md:tw-block">

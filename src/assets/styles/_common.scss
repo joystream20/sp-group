@@ -12,7 +12,8 @@ $font4 : 'Kiwi Maru', serif;
 $col1:#0a376e;
 $col2: #fff;
 $col3:#edf2f7;
-$colList: #0a376e;
+$col4: #021345;
+$colList: $col1,$col2;
 
 $break1 : 897;
 
@@ -321,6 +322,8 @@ ul{
   list-style:none;
   margin:0;
 }
+
+
 
 
 $ww : 897;

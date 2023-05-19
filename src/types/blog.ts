@@ -6,11 +6,13 @@ export type Category = {
 
 export type Topics = {
   title:string,
+  icatch:string,
   category: Category[],
   content: string
 } & MicroCMSListContent
 
 export type News = {
   title: string,
+  category: Category[],
   content: string
 } & MicroCMSListContent

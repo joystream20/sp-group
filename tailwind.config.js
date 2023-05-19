@@ -20,6 +20,15 @@ module.exports = {
     },
     screens: {
       'md': '896px',
+    },
+    fontSize: {
+      smm: '.75em',
+      sm: '.875em',
+      base: '1em',
+      xl: '1.125em',
+      '2xl': '1.25em',
+      '3xl': '1.375em',
+      '4xl': '1.5em'
     }
   },
   plugins: [],

@@ -70,7 +70,7 @@ definePageMeta({
 </script>
 
 <template>
-  <main class="site-main">
+  <main class="site-main topics">
     <span class="published">{{ $formatDate(String(article.publishedAt)) }}</span>
     <h1 class="title">{{ article.title }}</h1>
     <div v-if="icatch" class="image">

@@ -11,7 +11,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="site-main">
+  <main class="site-main news">
     <h2>News</h2>
     <div class="postContainer">
       <NewsList :news="news.contents" />

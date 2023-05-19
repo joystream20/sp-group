@@ -9,7 +9,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="site-main">
+  <main class="site-main about page">
     <h2 class="ttl">about</h2>
   </main>
 </template>

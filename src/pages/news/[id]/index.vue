@@ -19,7 +19,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="site-main">
+  <div class="site-main news">
     <span class="published">{{ article.publishedAt }}</span>
     <h1 class="title">{{ article.title }}</h1>
     <div class="content" v-html="article.content"></div>

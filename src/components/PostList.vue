@@ -7,15 +7,23 @@ type Props = {
 
 const { topics } = defineProps<Props>()
 // console.log(topics)
+
 </script>
 
 <template>
-  <div>
-    <article class="article" v-for="topic in topics" :key="topic.id">
-        <span class="published">{{ $formatDate(String(topic.publishedAt)) }}</span>
-        <span class="cat" v-for="cat in topic.category" :key="cat.id">{{ cat.name }}</span>
+  <div class="topicList">
+    <article class="topicList-item" v-for="topic in topics" :key="topic.id">
+        <div class="image">
+          <NuxtLink :to="`/topics/${topic.id}`"><img :src="topic.icatch.url" alt=""></NuxtLink>
+        </div>
+        <div class="txtContainer tw-flex tw-items-center tw-py-2">
+          <span class="published">{{ $formatDate(String(topic.publishedAt)) }}</span>
+          <span class="cat tw-ml-4 tw-text-sm btn" v-for="cat in topic.category" :key="cat.id">
+            <NuxtLink :to="`/cats/${cat.id}/page/1`">{{ cat.name }}</NuxtLink>
+            </span>
+        </div>
         <NuxtLink :to="`/topics/${topic.id}`">
-          <h2 class="title">{{ topic.title }}</h2>
+          <h2 class="title tw-font-bold">{{ topic.title }}</h2>
         </NuxtLink>
       </article>
   </div>
