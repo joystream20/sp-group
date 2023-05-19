@@ -148,6 +148,23 @@ const objClass : object = {
             </section>
           </div>
         </div>
+        <div class="sec sec5">
+          <div class="sec__inner tw-max-w-7xl tw-mx-auto">
+            <p class="txt tw-text-2xl u_col2">ワンストップのサービスで、経営課題を解決するサポート体制を整えています。</p>
+            <div class="telContainer tw-text-center u_col2 tw-mt-20">
+              <div class="tw-text-center tw-inline-block">
+                <p class="txt tw-text-4xl tw-text-left">お電話でのお問い合わせ</p>
+                <a href="tel:0357637770" class="tel tw-inline-block">
+                  <span class="num u_ff3 tw-text-6xl md:tw-text-10xl tw-leading-none tw-tracking-widest">03-5763-7770</span>
+                </a>
+                <p class="txt tw-text-right tw-text-xl">受付時間　平日10:00~19:00</p>
+              </div>
+            </div>
+            <div class="mailContainer tw-text-center tw-mt-12 md:tw-mt-24">
+              <a class="mail u_bgcol2 tw-inline-block"><span class="txt u_col1 tw-text-4xl tw-font-semibold">メールでのお問い合わせ</span></a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </main>

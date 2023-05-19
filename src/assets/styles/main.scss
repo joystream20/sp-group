@@ -405,6 +405,33 @@ $ww : 896;
             }
           }
         }
+        &.sec5{
+          position:relative;
+          &:before{
+            content:"";
+            display: block;
+            position:absolute;
+            top:0;right:0;bottom:0;left:0;
+            z-index: -1;
+            background-image: url(../../assets/images/top/img_contact_back.jpg);
+            background-repeat: no-repeat;
+            background-size:cover;
+            opacity: .4;
+          }
+          &:after{
+            content:"";
+            position:absolute;
+            top:0;right:0;bottom:0;left:0;
+            z-index: -1;
+            background-color: $col1;
+            opacity: .7;
+          }
+          .mailContainer{
+            .mail{
+              padding:1em 3em;
+            }
+          }
+        }
       }
 
       

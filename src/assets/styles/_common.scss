@@ -1,19 +1,21 @@
 @use "sass:math";
 
-@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@1,700&family=Yantramanav:wght@900&display=swap');
 
 $font1: "ヒラギノ角ゴ ProN W3","HiraKakuProN-W3","ヒラギノ角ゴ Pro W3","HiraKakuPro-W3","メイリオ",Meiryo, sans-serif;
 $font2: "YuMincho",'Yu Mincho',"ヒラギノ明朝 Pro W6", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝","HGS明朝B", serif;
-$font3 : 'Oswald', sans-serif;
-$font4 : 'Kiwi Maru', serif;
+$font3 : 'Yantramanav', sans-serif;
+$font4 : 'Be Vietnam Pro', sans-serif;
 
 
 $col1:#0a376e;
 $col2: #fff;
 $col3:#edf2f7;
 $col4: #021345;
-$colList: $col1,$col2;
+
+$colList: $col1,$col2,$col3;
 
 $break1 : 897;
 
@@ -329,7 +331,13 @@ ul{
 $ww : 897;
 $def : 16;
 
+.u_ff3{
+  font-family: $font3;
+}
 
+.u_ff4{
+  font-family: $font4;
+}
 
 // .u_no_outline{
 //   outline:none;
@@ -1187,15 +1195,15 @@ $def : 16;
 //   width:100%;
 // }
 
-// $i:1;
-// @each $col in $colList {
-//   .u_bgcol#{$i}{ background-color:#{$col};}  
-//   .u_col#{$i}{color:#{$col};}
+$i:1;
+@each $col in $colList {
+  .u_bgcol#{$i}{ background-color:#{$col};}  
+  .u_col#{$i}{color:#{$col};}
   
-//   .u_bgcol#{$i}_i{ background-color:#{$col} !important;}  
-//   .u_col#{$i}_i{color:#{$col} !important;}
-//   $i: $i + 1;
-// }
+  // .u_bgcol#{$i}_i{ background-color:#{$col} !important;}  
+  // .u_col#{$i}_i{color:#{$col} !important;}
+  $i: $i + 1;
+}
 
 
 
