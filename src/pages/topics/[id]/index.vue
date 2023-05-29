@@ -70,20 +70,48 @@ definePageMeta({
 </script>
 
 <template>
-  <main class="site-main topics">
-    <span class="published">{{ $formatDate(String(article.publishedAt)) }}</span>
-    <h1 class="title">{{ article.title }}</h1>
-    <div v-if="icatch" class="image">
-      <img :src="icatch" alt="">
-    </div>
-    <div class="md" v-html="_body"></div>
-    <div class="pager">
-      <div v-if="prevPost.contents.length > 0 ">
-        <NuxtLink :to="`/topics/${prevPost.contents[0].id}`"><span class="arrow">&lt;</span></NuxtLink>
-      </div>
-      <div v-if="nextPost.contents.length > 0 ">
-        <NuxtLink :to="`/topics/${nextPost.contents[0].id}`"><span class="arrow">&gt;</span></NuxtLink>
+  <main class="site-main topics single">
+    <div class="breadContainer">
+      <div class="breadList tw-flex tw-justify-end">
+        <NuxtLink :to="`/`">ホーム</NuxtLink>
+        <span class="arr tw-block tw-px-2">&gt;</span>
+        <NuxtLink :to="`/topics`">トピックス</NuxtLink>
+        <span class="tw-block tw-px-2">-</span>
+        <span class="txt current">{{ $formatDate(String(article.publishedAt)) }}</span>
       </div>
     </div>
+
+
+    <div class="postContainer">
+      <div class="postContainer__inner u_mx">
+
+        <div class="topContainer">
+          <div class="topContainer__inner">
+            <div class="ttlContainer">
+              <h1 class="ttlContainer-ttl">{{ article.title }}</h1>
+            </div>
+            <div class="md:tw-flex">
+              <div class="txtContainer">
+                <span class="published">{{ $formatDate(String(article.publishedAt)) }}</span>
+                </div>
+                <div v-if="icatch" class="image">
+                  <img :src="icatch" alt="">
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="md" v-html="_body"></div>
+        <div class="pager">
+          <div v-if="prevPost.contents.length > 0 ">
+            <NuxtLink :to="`/topics/${prevPost.contents[0].id}`"><span class="arrow">&lt;</span></NuxtLink>
+          </div>
+          <div v-if="nextPost.contents.length > 0 ">
+            <NuxtLink :to="`/topics/${nextPost.contents[0].id}`"><span class="arrow">&gt;</span></NuxtLink>
+          </div>
+        </div>
+            </div>
+      </div>
+
   </main>
 </template>

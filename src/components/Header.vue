@@ -127,8 +127,8 @@ const btnClick = () => {
 <template>
   <header id="siteHeader" :class="`${btnClass} site-header tw-fixed tw-z-10 tw-w-full tw-text-white`">
     <div class="site-header__inner tw-flex tw-justify-between tw-items-center">
-      <h1 class="site-title" v-if="p_type == 'top'"><img src="@/assets/images/img_logo.png" width="78" ></h1>
-      <p class="site-title" v-else><nuxtLink :to="`/`"><img src="@/assets/images/img_logo.png" width="78"></nuxtLink></p>
+      <h1 class="site-title" v-if="p_type == 'top'"><img src="@/assets/images/img_logo2.png" width="229" ></h1>
+      <p class="site-title" v-else><nuxtLink :to="`/`"><img src="@/assets/images/img_logo2.png" width="229"></nuxtLink></p>
       <div id="navContainer" class="navContainer tw-fixed tw-w-full md:tw-w-fit md:tw-relative md:tw-block">
         <ul id="gnav" class="site-header-gnavList gnavList md:tw-flex">
           <li class="gnavList-item">
@@ -138,10 +138,19 @@ const btnClick = () => {
             <nuxtLink :to="`/about`">SPグループの強み</nuxtLink>
           </li>
           <li class="gnavList-item">
+            <nuxtLink :to="`/service`">事例案内</nuxtLink>
+          </li>
+          <li class="gnavList-item">
+            <nuxtLink :to="`/casestudies`">事例</nuxtLink>
+          </li>
+          <li class="gnavList-item">
             <nuxtLink :to="`/topics`">トピックス</nuxtLink>
           </li>
           <li class="gnavList-item">
             <nuxtLink :to="`/news`">ニュース</nuxtLink>
+          </li>
+          <li class="gnavList-item">
+            <nuxtLink :to="`/company`">企業情報</nuxtLink>
           </li>
         </ul>
       </div>

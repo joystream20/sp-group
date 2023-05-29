@@ -1004,7 +1004,11 @@ $def : 16;
 // }
 
 
-
+.u_mx{
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
 // .u_mx_def{
 //   max-width:1380px;
 //   margin-left:auto;
@@ -1034,15 +1038,14 @@ $def : 16;
 
 
 
-// .u_sp{
-// display: block;
-// }
-// .u_sp_64{
-// display: block;
-// }
-// .u_pc{
-// display: none;
-// }
+.u_sp{
+}
+.u_sp_64{
+display: block;
+}
+.u_pc{
+display: none;
+}
 
 // .u_fw-7{
 // font-weight: 700;;
@@ -1212,4 +1215,14 @@ $i:1;
 }
 
 @media screen and (min-width: 897px) {
+  .u_sp{
+    display: none;
+    }
+    .u_sp_64{
+    display: none;
+    }
+    .u_pc{
+    display: block;
+    }
+    
 }

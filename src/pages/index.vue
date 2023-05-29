@@ -51,16 +51,18 @@ const objClass : object = {
       </div>
     </div>
     <div class="site-main__inner">
-      <div class="secContainer">
+      <article class="secContainer">
         <section class="sec sec1 tw-px-8">
           <div class="sec__inner mx">
             <header class="sec__header tw-text-white">
               <h2 class="sec__header-ttl">
-                <picture>
+                <!-- <picture>
 								<source :media="`(min-width:${breakPoint}px)`" srcset="@/assets/images/top/img_sec_ttl01.png">
 								<source :media="`(max-width:${breakPoint}px)`" srcset="@/assets/images/top/img_sec_ttl01_sp.png">
 								<img src="@/assets/images/top/img_sec_ttl01_sp.png"  alt="our advantage お客様と共に夢を現実にしていくSPグループ" width="916">
-							</picture>
+							</picture> -->
+                <span class="txt tw-block">OUR</span>
+                <span class="txt tw-block">ADVANTAGE</span>
               </h2>
               <p class="sec__header-txt">SPグループの強み</p>
             </header>
@@ -100,7 +102,7 @@ const objClass : object = {
           <div class="sec__inner mx">
             <header class="sec__header ">
               <h2 class="sec__header-ttl">
-                <img src="@/assets/images/top/img_sec_ttl02.png"  alt="business" width="916">
+                BUSINESS
               </h2>
               <p class="sec__header-txt">事業案内</p>
             </header>
@@ -112,7 +114,9 @@ const objClass : object = {
           <div class="sec__inner mx">
             <header class="sec__header ">
               <h2 class="sec__header-ttl">
-                <img src="@/assets/images/top/img_sec_ttl03.png"  alt="case studies" width="916">
+                <!-- <img src="@/assets/images/top/img_sec_ttl03.png"  alt="case studies" width="916"> -->
+                <span class="txt tw-block">CASE</span>
+                <span class="txt tw-block">STUDIES</span>
               </h2>
               <p class="sec__header-txt">事例</p>
             </header>
@@ -122,9 +126,9 @@ const objClass : object = {
             </div>
           </div>
         </section>
-        <div class="sec sec4 tw-px-8">
+        <div class="sec sec4 tw-px-8 tw-mb-56">
           <div class="sec__inner mx md:tw-flex tw-pt-52 md:tw-pt-72">
-            <section class="sec_nt news tw-pt-28 md:tw-pt-48 md:tw-w-6/12 tw-flex tw-flex-col tw-px-8">
+            <section class="sec_nt news md:tw-pb-12 tw-pt-28 md:tw-pt-48 md:tw-w-6/12 tw-flex tw-flex-col tw-px-8">
               <header class="sec_nt__header">
                 <h2 class="sec_nt__header-ttl tw-text-xl md:tw-text-4xl">ニュース</h2>
               </header>
@@ -132,10 +136,10 @@ const objClass : object = {
                 <NewsList :news="news.contents" />
               </div>
               <div class="btnContainer tw-text-right">
-                  <a href="" class="btnContainer-btn btn"><span class="txt">一覧を見る</span></a>
+                  <NuxtLink class="btnContainer-btn btn" :to="`/news`"><span class="txt">一覧を見る</span></NuxtLink>
                 </div>
             </section>
-            <section class="sec_nt topics tw-pt-28 md:tw-pt-48 md:tw-w-6/12 tw-flex tw-flex-col tw-px-8">
+            <section class="sec_nt topics md:tw-pb-12 tw-pt-28 md:tw-pt-48 md:tw-w-6/12 tw-flex tw-flex-col tw-px-8">
               <header class="sec_nt__header">
                 <h2 class="sec_nt__header-ttl tw-text-xl md:tw-text-4xl">トピックス</h2>
               </header>
@@ -143,7 +147,7 @@ const objClass : object = {
                 <PostList :topics="topics.contents" />
               </div>
               <div class="btnContainer tw-text-right">
-                  <a href="" class="btnContainer-btn btn"><span class="txt">一覧を見る</span></a>
+                  <NuxtLink :to="`/topics`" class="btnContainer-btn btn"><span class="txt">一覧を見る</span></NuxtLink>
                 </div>
             </section>
           </div>
@@ -165,7 +169,7 @@ const objClass : object = {
             </div>
           </div>
         </div>
-      </div>
+      </article><!-- article -->
     </div>
   </main>
 </template>

@@ -17,8 +17,9 @@ const { news } = defineProps<Props>()
           <NuxtLink :to="`/cats/${cat.id}/page/1`">{{ cat.name }}</NuxtLink>
         </span>
       </div>
-      <NuxtLink :to="`/news/${post.id}`" class="tw-flex tw-py-3">
-        <span class="published">{{ $formatDate(String(post.publishedAt)) }}</span><h2 class="ttl tw-font-bold tw-ml-20">{{ post.title }}</h2>
+      <time class="published">{{ $formatDate(String(post.publishedAt)) }}</time>
+      <NuxtLink :to="`/news/${post.id}`">
+        <h2 class="ttl tw-font-bold">{{ post.title }}</h2>
       </NuxtLink>
     </article>
   </div>
