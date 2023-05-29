@@ -17,10 +17,12 @@ const { news } = defineProps<Props>()
           <NuxtLink :to="`/cats/${cat.id}/page/1`">{{ cat.name }}</NuxtLink>
         </span>
       </div>
-      <time class="published">{{ $formatDate(String(post.publishedAt)) }}</time>
-      <NuxtLink :to="`/news/${post.id}`">
-        <h2 class="ttl tw-font-bold">{{ post.title }}</h2>
-      </NuxtLink>
+      <div class="txtContainer tw-flex">
+        <time class="published">{{ $formatDate(String(post.publishedAt)) }}</time>
+        <NuxtLink :to="`/news/${post.id}`">
+          <h2 class="ttl tw-font-bold">{{ post.title }}</h2>
+        </NuxtLink>
+      </div>
     </article>
   </div>
 </template>

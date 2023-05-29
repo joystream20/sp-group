@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-const {API_KEY, SERVICE_DOMAIN} = process.env
+/const {API_KEY, SERVICE_DOMAIN} = process.env
 
 export default defineNuxtConfig({
   srcDir: 'src/',

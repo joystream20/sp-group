@@ -17,10 +17,12 @@ const { topics } = defineProps<Props>()
           <NuxtLink :to="`/topics/${topic.id}`"><img :src="topic.icatch.url" alt=""></NuxtLink>
         </div>
         <div class="txtContainer tw-flex tw-items-center tw-py-2">
-          <span class="published">{{ $formatDate(String(topic.publishedAt)) }}</span>
-          <span class="cat tw-ml-4 tw-text-sm btn" v-for="cat in topic.category" :key="cat.id">
-            <NuxtLink :to="`/cats/${cat.id}/page/1`">{{ cat.name }}</NuxtLink>
-            </span>
+          <time class="published">{{ $formatDate(String(topic.publishedAt)) }}</time>
+          <ul class="catList">
+            <li class="catList-item cat tw-ml-4 tw-text-sm btn" v-for="cat in topic.category" :key="cat.id">
+              <NuxtLink :to="`/cats/${cat.id}/page/1`">{{ cat.name }}</NuxtLink>
+              </li>
+          </ul>
         </div>
         <NuxtLink :to="`/topics/${topic.id}`">
           <h2 class="title tw-font-bold">{{ topic.title }}</h2>

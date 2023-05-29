@@ -710,6 +710,26 @@ $ww : 896;
           }
         }
       }
+      &.news{
+        .newsList{
+          &-item{
+            padding:1.7em 0 1em;
+            border-top:2px solid $col1;
+            &:last-child{
+              border-bottom:2px solid $col1;
+            }
+            .txtContainer{
+              margin-top:.7em;
+              .published{
+                min-width:10em;
+              }
+            }
+            &:hover{
+              background-color: $col3;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -948,6 +968,13 @@ $ww : 896;
             }
           }
         }
+        &.news{
+          .newsList{
+            &-item{
+              padding:2.7em 0 1.5em;
+            }
+          }
+        }
       }
       &.single{
         &.topics{
@@ -958,7 +985,7 @@ $ww : 896;
               display: block;
               transform:rotate(90deg);
             }
-            
+
             .txtContainer{
               flex:1;
             }

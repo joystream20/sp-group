@@ -12,7 +12,9 @@ const {data: article} = await useFetch(`/api/postDetail`, {
   params: {slug:id}
 })
 
-// console.log(article.value.publishedAt)
+const cats = article.value.category;
+console.log(cats)
+// console.log(article.value.category)
 
 const nextQuery :MicroCMSQueries = {
   limit:1,
@@ -91,11 +93,16 @@ definePageMeta({
               <h1 class="ttlContainer-ttl">{{ article.title }}</h1>
             </div>
             <div class="md:tw-flex">
+              <div v-if="icatch" class="image">
+                <img :src="icatch" alt="">
+              </div>
               <div class="txtContainer">
-                <span class="published">{{ $formatDate(String(article.publishedAt)) }}</span>
-                </div>
-                <div v-if="icatch" class="image">
-                  <img :src="icatch" alt="">
+                <time class="published">{{ $formatDate(String(article.publishedAt)) }}</time>
+                <ul class="catList">
+                  <li class="catList-item cat" v-for="cat in cats" :key="cat.id">
+                    <NuxtLink :to="`/cats/${cat.id}/page/1`">{{ cat.name }}</NuxtLink>
+                  </li>
+                </ul>
                 </div>
             </div>
           </div>
@@ -105,6 +112,9 @@ definePageMeta({
         <div class="pager">
           <div v-if="prevPost.contents.length > 0 ">
             <NuxtLink :to="`/topics/${prevPost.contents[0].id}`"><span class="arrow">&lt;</span></NuxtLink>
+          </div>
+          <div class="btnContainer">
+            <NuxtLink :to="`/topics`">一覧へ戻る</NuxtLink>
           </div>
           <div v-if="nextPost.contents.length > 0 ">
             <NuxtLink :to="`/topics/${nextPost.contents[0].id}`"><span class="arrow">&gt;</span></NuxtLink>
