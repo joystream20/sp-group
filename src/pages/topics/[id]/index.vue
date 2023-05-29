@@ -92,12 +92,12 @@ definePageMeta({
             <div class="ttlContainer">
               <h1 class="ttlContainer-ttl">{{ article.title }}</h1>
             </div>
-            <div class="md:tw-flex">
+            <div class="md:tw-flex md:tw-flex-row-reverse md:tw-items-end">
               <div v-if="icatch" class="image">
                 <img :src="icatch" alt="">
               </div>
-              <div class="txtContainer">
-                <time class="published">{{ $formatDate(String(article.publishedAt)) }}</time>
+              <div class="txtContainer tw-flex tw-items-center tw-text-smm">
+                <time class="published tw-mr-4">{{ $formatDate(String(article.publishedAt)) }}</time>
                 <ul class="catList">
                   <li class="catList-item cat" v-for="cat in cats" :key="cat.id">
                     <NuxtLink :to="`/cats/${cat.id}/page/1`">{{ cat.name }}</NuxtLink>
@@ -108,16 +108,16 @@ definePageMeta({
           </div>
         </div>
 
-        <div class="md" v-html="_body"></div>
+        <div class="postContent" v-html="_body"></div>
         <div class="pager">
           <div v-if="prevPost.contents.length > 0 ">
-            <NuxtLink :to="`/topics/${prevPost.contents[0].id}`"><span class="arrow">&lt;</span></NuxtLink>
+            <NuxtLink :to="`/topics/${prevPost.contents[0].id}`" class="_btn prev"><span class="arrow">&lt;</span></NuxtLink>
           </div>
           <div class="btnContainer">
-            <NuxtLink :to="`/topics`">一覧へ戻る</NuxtLink>
+            <NuxtLink :to="`/topics`" class="btn">一覧へ戻る</NuxtLink>
           </div>
           <div v-if="nextPost.contents.length > 0 ">
-            <NuxtLink :to="`/topics/${nextPost.contents[0].id}`"><span class="arrow">&gt;</span></NuxtLink>
+            <NuxtLink :to="`/topics/${nextPost.contents[0].id}`" class="_btn next"><span class="arrow">&gt;</span></NuxtLink>
           </div>
         </div>
             </div>

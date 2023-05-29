@@ -23,7 +23,7 @@ onMounted(() => {
           <span class="txt tw-block">COMPANY</span>
           <span class="txt tw-block">INFO</span>
         </h2>
-        <p class="titleContainer-txt">企業情報</p>
+        <p class="ttlContainer-txt">企業情報</p>
       </div>
     </header>
     <article class="secContainer">
@@ -61,9 +61,7 @@ onMounted(() => {
       <div class="sec sec-btn">
       <div class="sec__inner u_mx">
         <div class="btnContainer tw-py-44">
-          <a href="" class="btnContainer-btn btn-sc">
-            <span class="txt">経営理念</span>
-          </a>
+          <NuxtLink :to="`/company/philosophy`" class="btnContainer-btn btn-sc"><span class="txt">経営理念</span></NuxtLink>
         </div>
       </div>
     </div>

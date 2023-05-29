@@ -144,7 +144,13 @@ $ww : 896;
   }
 
   &-main{
-    
+    position:relative;
+    .breadContainer{
+      position:absolute;
+      width:100%;
+      top:0;left:0;
+      z-index: 3;
+    }
   }
 
   .sec{
@@ -730,6 +736,126 @@ $ww : 896;
           }
         }
       }
+      &.philosophy{
+        .ttlContainer{
+          z-index: 1;
+         &:before{
+          content:"";
+          display: block;
+          position:absolute;
+          top:0;
+          left:0;
+          width:100%;
+          height:100%;
+          background:url(../../assets/images/page/img_hero_back_ph.jpg) no-repeat left center;
+          background-size:cover;
+         }
+          &__inner{
+            text-align: center;
+          }
+          &-ttl{
+            font-size:clamp(52px, #{pvv(146, 1040)}, 146px);
+            text-align: left;
+            color:$col3;
+            filter: drop-shadow(2px 3px 4px rgba(10, 55, 110, 0.15));
+          }
+          &-txt{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%);
+            font-size:1.5;
+            font-weight: 600;
+          }
+        }
+        .secContainer{
+          position:relative;
+          z-index: 2;
+        }
+      }
+    }
+    &.single{
+      .pager{
+        position:relative;
+        ._btn{
+          position:absolute;
+          top:50%;
+          transform:translateY(-50%);
+          color:$col1;
+          font-size:2em;
+          &.prev{
+            left:0;
+          }
+          &.next{
+            right:0;
+          }
+        }
+        .btnContainer{
+          width:100%;
+          text-align: center;
+          .btn{
+            min-width:12em;
+            display: inline-block;
+            background-color: $col1;
+            color:#fff;
+            padding:.5em;
+          }
+        }
+      }
+      &.topics{
+        .postContainer{
+          padding-bottom: 2em;
+        }
+        .topContainer{
+          position: relative;
+          &:before{
+            content:"TOPICS";
+            display: block;
+            transform-origin: left top;
+            transform:rotate(90deg) translateY(-100%);
+            position:absolute;
+            left:0;
+            font-family: $font4;
+            color:$col3;
+            font-size:clamp(83px, #{pvv(170,1040)}, 170px);//83px;
+            letter-spacing: -.05em;
+            line-height: 1;
+            filter:drop-shadow(2px 3px 4px rgba($col1, .15));
+            z-index: -1;
+          }
+          .ttlContainer{
+            padding-top:clamp(140px, #{pvv(200, 1040)}, 200px);
+            padding-bottom:clamp(60px, #{pvv(80, 1040)}, 80px);
+            padding-left:20px;
+            padding-right:20px;
+            &-ttl{
+              text-align: center;
+              font-weight: 600;
+              font-size:1.125em;
+              position: relative;
+              &:after{
+                content:"";
+                width:4em;
+                height:2px;
+                background-color: $col1;
+                display: block;
+                margin:.7em auto 0;
+
+              }
+            }
+          }
+          .image{
+            width:67%;
+            margin-left:auto;
+          }
+          .txtContainer{
+            margin-top:2em;
+          }
+        }
+        .postContent{
+          
+        }
+      }
     }
   }
 
@@ -975,22 +1101,48 @@ $ww : 896;
             }
           }
         }
+        &.philosophy{
+          .ttlContainer{
+            &:before{
+              width:26%;
+            }
+          }
+        }
       }
       &.single{
         &.topics{
           .topContainer{
             display: flex;
-            &:before{
-              content:"TOPICS";
-              display: block;
-              transform:rotate(90deg);
+            &__inner{
+              margin-left:11.4%;
             }
 
             .txtContainer{
               flex:1;
+              padding-left:2em;
             }
             .image{
               width:56%;
+            }
+          }
+          .postContent{
+            max-width:850px;
+            margin:60px auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1040px) {
+  .site{
+    .site-main{
+      &.page{
+        &.philosophy{
+          .ttlContainer{
+            &:before{
+              width:calc(50% - 250px);
             }
           }
         }
