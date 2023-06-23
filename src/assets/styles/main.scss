@@ -1302,7 +1302,7 @@ $ww : 896;
             margin-top:clamp(60px, #{pvv(120, 1100)}, 120px);
             position:relative;
             overflow: hidden;
-            height:590px;
+            height:550px;
             width:100%;
           }
           
@@ -2725,7 +2725,7 @@ $ww : 896;
             padding:0 20% 0 20%;
             // left:40%;
             &-wrap{
-
+              height:590px;
             }
             &-item{
               width:355px;
