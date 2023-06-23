@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     serviceDomain:SERVICE_DOMAIN
   },
   modules: ["@nuxtjs/tailwindcss","@nuxtjs/device"],
-  css:['modern-css-reset','~/assets/css/reset.css','~/assets/css/style.css','@/assets/styles/main.scss','@fortawesome/fontawesome-svg-core/styles.css'],
+  css:['modern-css-reset','~/assets/css/reset.css','~/assets/css/style.css','@/assets/styles/main.scss'],
   build: {
     transpile: ['gsap'],
   },
