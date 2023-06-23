@@ -1244,6 +1244,9 @@ $ww : 896;
             .arContainer{
               svg{
                 color:$col1;
+                display: inline-block;
+                fill:$col1;
+                font-size: 1.3em;;
               }
             }
           }

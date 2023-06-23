@@ -40,7 +40,7 @@
 
 <template>
     <div class="catContainer tw-relative" @mouseover="mOver" @mouseleave="mOut">
-      <p class="ttl u_ff4 u_col1 u_bgcol3 tw-px-8 tw-py-1 md:tw-text-xl tw-flex tw-justify-between tw-items-center"><span class="txt">CATEGORY</span><font-awesome-icon :icon="['fass', 'angle-down']" /></p>
+      <p class="ttl u_ff4 u_col1 u_bgcol3 tw-px-8 tw-py-1 md:tw-text-xl tw-flex tw-justify-between tw-items-center"><span class="txt">CATEGORY</span><SvgAngleDown /></p>
       <div class="arcList-wrap tw-absolute tw-w-full u_bgcol3">
         <ul class="arcList tw-px-4 tw-py-4">
           <li v-for="cat in cats" :key="cat.id" class="arcList-item">
@@ -56,6 +56,7 @@
     min-width:11em;
     svg{
       font-size:1.5em;
+      fill:$col1;
     }
   }
   .arcList{

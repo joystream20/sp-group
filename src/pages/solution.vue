@@ -249,7 +249,7 @@ const close = () => {
                 </div>
               </div>
               <div class="arContainer tw-text-center tw-text-6xl">
-                <font-awesome-icon :icon="['fas', 'angle-down']" />
+                <SvgAngleDown />
               </div>
               <div class="stpContainer-box">
                 <div class="stpContainer-wrap md:tw-flex tw-text-center">
@@ -266,7 +266,7 @@ const close = () => {
                 <p class="note tw-text-smm tw-text-right">※審査の結果ご希望に添えない場合があります。あらかじめご了承ください。</p>
               </div>
               <div class="arContainer tw-text-center tw-text-6xl">
-                <font-awesome-icon :icon="['fas', 'angle-down']" />
+                <SvgAngleDown />
               </div>
               <div class="stpContainer-box">
                 <div class="stpContainer-wrap md:tw-flex tw-text-center">
@@ -283,7 +283,7 @@ const close = () => {
                 
               </div>
               <div class="arContainer tw-text-center tw-text-6xl">
-                <font-awesome-icon :icon="['fas', 'angle-down']" />
+                <SvgAngleDown />
               </div>
               <div class="stpContainer-box">
                 <div class="stpContainer-wrap md:tw-flex tw-text-center">
