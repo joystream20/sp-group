@@ -30,7 +30,11 @@ onMounted(() => {
 
   nextTick(() => {
     const video = main.value.querySelector('.videoContainer video')
-    playVideo()
+
+    setTimeout(() => {
+      playVideo()
+    },500)
+    
 
     async function playVideo() {
       try {
