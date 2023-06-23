@@ -66,7 +66,7 @@ $ww : 896;
     top:0;
     // color:$col2;
     &__inner{
-      padding:.5em 0;
+      padding:.5em 0 0;
       transition:background-color .7s;
       background-color: $col1;
     }
