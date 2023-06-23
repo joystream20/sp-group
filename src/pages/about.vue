@@ -7,6 +7,8 @@ const type:string = "company"
 
 const elm = ref()
 
+const ttl_view = ref<String>('')
+
 onMounted(() => {
   emit('p_type', 'about')
   
@@ -32,6 +34,9 @@ onMounted(() => {
       }
     )
     
+    setTimeout(() => {
+      ttl_view.value = 'on'
+    },1500)
   })
   
 })
@@ -48,9 +53,9 @@ onMounted(() => {
     </div>
     <header class="ttlContainer tw-px-8 tw-relative">
       <div class="ttlContainer__inner u_mx">
-        <p class="ttlContainer-ttl">
-          <span class="txt tw-block">OUR</span>
-          <span class="txt tw-block">ADVANTAGE</span>
+        <p :class="`ttlContainer-ttl ${ttl_view}`">
+          <span class="txt tw-block anm_t"><span>OUR</span></span>
+          <span class="txt tw-block anm_t d2"><span>ADVANTAGE</span></span>
         </p>
         <h2 class="ttlContainer-txt tw-font-semibold">SPグループの強み</h2>
       </div>

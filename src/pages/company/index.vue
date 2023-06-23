@@ -9,8 +9,16 @@ const _hash = route.hash
 
 console.log(_hash)
 
+const ttl_view = ref<String>('')
+
 onMounted(() => {
   emit('p_type', 'company')
+
+  nextTick(() => {
+    setTimeout(() => {
+      ttl_view.value = 'on'
+    },1500)
+  })
 })
 
 const dtClick = (e) => {
@@ -38,9 +46,9 @@ const dtClick = (e) => {
     </div>
     <header class="ttlContainer tw-px-8 tw-relative">
       <div class="ttlContainer__inner u_mx">
-        <h2 class="ttlContainer-ttl">
-          <span class="txt tw-block">COMPANY</span>
-          <span class="txt tw-block">INFO</span>
+        <h2 :class="`ttlContainer-ttl ${ttl_view}`">
+          <span class="txt tw-block anm_t"><span>COMPANY</span></span>
+          <span class="txt tw-block anm_t d2"><span>INFO</span></span>
         </h2>
         <p class="ttlContainer-txt">企業情報</p>
       </div>

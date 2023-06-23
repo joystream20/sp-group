@@ -30,6 +30,8 @@ const padT:string = ua == 'mobile' ? 'top 10%' : 'top 20%'
 //   _cur.classList.add('current')
 // }
 
+const ttl_view = ref<String>('')
+
 const main = ref()
 let ctx;
 
@@ -49,7 +51,9 @@ onMounted(() => {
     // setTimeout( () => {
     //   console.log(listEl[0],listEl[0].clientWidth, listWrapperEl[0])
     // },500)
-    const blocks = document.querySelectorAll('.blockContainer-block');
+    nextTick(() => {
+
+    const blocks = self.selector('.blockContainer-block')
     blocks.forEach(
       block => {
         gsap.to(block, {
@@ -71,11 +75,10 @@ onMounted(() => {
             // markers:true
           }
         })
-      }
-    )
+      })
     
 
-    nextTick(() => {
+    
       setTimeout(() => {
 
         const listWrapperEl = self.selector('.meritList-wrap')[0]
@@ -107,23 +110,11 @@ onMounted(() => {
   },main.value)
 
   
-  // console.log(document.querySelector('.meritList-wrap'),document.querySelector('.meritList'))
-  // console.log(listWrapperEl.clientWidth)
-
-  //   gsap.to(listEl, {
-  //   x: () => -(listEl.clientWidth - listWrapperEl.clientWidth),
-  //   ease: 'none',
-  //   scrollTrigger: {
-  //     trigger: '.sec3',
-  //     start:'top top',
-  //     end: () => `+=${listEl.clientWidth - listWrapperEl.clientWidth}`,
-  //     scrub: true,
-  //     pin: true,
-  //     anticipatePin: 1,
-  //     invalidateOnRefresh: true
-  //   }
-  // })
-  // console.log(gsap)
+  nextTick(() => {
+    setTimeout(() => {
+      ttl_view.value = 'on'
+    },1500)
+  })
 }
 
 
@@ -131,7 +122,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   // console.log('clean')
-  // ctx.revert(); // <- Easy Cleanup!
+  ctx.revert(); // <- Easy Cleanup!
 })
 
 </script>
@@ -150,9 +141,9 @@ onUnmounted(() => {
     </div>
     <header class="ttlContainer tw-px-8 tw-relative angle_b_t">
       <div class="ttlContainer__inner u_mx">
-        <p class="ttlContainer-ttl">
-          <span class="txt tw-block">OUR</span>
-          <span class="txt tw-block">ADVANTAGE</span>
+        <p :class="`ttlContainer-ttl ${ttl_view}`">
+          <span class="txt tw-block anm_t"><span>OUR</span></span>
+          <span class="txt tw-block anm_t d2"><span>ADVANTAGE</span></span>
         </p>
         <h2 class="ttlContainer-txt tw-font-semibold">ロジスティック</h2>
       </div>

@@ -64,7 +64,7 @@ if (process.client) {
 <style>
 .page-enter-active,
 .page-leave-active{
-  transition: all .4s;
+  transition: all .7s .3s;
 }
 
 .page-enter-from,

@@ -20,11 +20,20 @@ const _current = ref<string>('')
 const main = ref()
 let ctx;
 
+const ttl_view = ref<String>('')
+
 onMounted(() => {
   emit('p_type', 'solution')
 
   ctx = gsap.context((self) => {
+
+    nextTick(() => {
+    
+      setTimeout(() => {
+
+     
     const blocks = document.querySelectorAll('.blockContainer-block');
+    console.log(blocks)
     blocks.forEach(
       block => {
         gsap.to(block, {
@@ -46,10 +55,21 @@ onMounted(() => {
             // markers:true
           }
         })
-      }
-    )
-  })
+      })
+    },1000)
+    }) //tick
+  }) //ctx
 
+  nextTick(() => {
+    setTimeout(() => {
+      ttl_view.value = 'on'
+    },1500)
+  })
+})// mounted
+
+onUnmounted(() => {
+  // console.log('clean')
+  ctx.revert(); // <- Easy Cleanup!
 })
 
 const open = ref(false)
@@ -80,9 +100,9 @@ const close = () => {
     </div>
     <header class="ttlContainer tw-px-8 tw-relative angle_b_t">
       <div class="ttlContainer__inner u_mx">
-        <p class="ttlContainer-ttl">
-          <span class="txt tw-block">OUR</span>
-          <span class="txt tw-block">ADVANTAGE</span>
+        <p :class="`ttlContainer-ttl ${ttl_view}`">
+          <span class="txt tw-block anm_t"><span>OUR</span></span>
+          <span class="txt tw-block anm_t d2"><span>ADVANTAGE</span></span>
         </p>
         <h2 class="ttlContainer-txt tw-font-semibold">ソリューション</h2>
       </div>

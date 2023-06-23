@@ -9,6 +9,8 @@ console.log(route.params.catId)
 
 // const {data: news} = await useFetch('/api/newsList',{})
 
+const ttl_view = ref<String>('')
+
 const {data: currentCat} = await useFetch(`/api/catDetail`, {
   params: {catId: catId}
 })
@@ -19,6 +21,11 @@ onMounted(() => {
   emit('p_type', 'news')
 
   // console.log(currentCat.value.name)
+  nextTick(() => {
+    setTimeout(() => {
+      ttl_view.value = 'on'
+    },1500)
+  })
 })
 
 </script>
@@ -36,8 +43,8 @@ onMounted(() => {
     </div>
     <header class="ttlContainer tw-px-8 tw-relative">
       <div class="ttlContainer__inner u_mx">
-        <h2 class="ttlContainer-ttl">
-          <span class="txt tw-block">NEWS</span>
+        <h2 :class="`ttlContainer-ttl ${ttl_view}`">
+          <span class="txt tw-block anm_t"><span>NEWS</span></span>
         </h2>
         <p class="ttlContainer-txt">ニュース</p>
       </div>

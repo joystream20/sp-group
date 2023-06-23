@@ -6,8 +6,16 @@ const type:string = "topics"
 
 const emit = defineEmits(['p_type'])
 
+const ttl_view = ref<String>()
+
 onMounted(() => {
   emit('p_type', 'topics')
+
+  nextTick(() => {
+    setTimeout(() => {
+      ttl_view.value = 'on'
+    },1500)
+  })
 })
 </script>
 
@@ -22,8 +30,8 @@ onMounted(() => {
     </div>
     <header class="ttlContainer tw-px-8 tw-relative">
       <div class="ttlContainer__inner u_mx">
-        <h2 class="ttlContainer-ttl">
-          <span class="txt tw-block">TOPICS</span>
+        <h2 :class="`ttlContainer-ttl ${ttl_view}`">
+          <span class="txt tw-block anm_t"><span>TOPICS</span></span>
         </h2>
         <p class="ttlContainer-txt">トピックス</p>
       </div>

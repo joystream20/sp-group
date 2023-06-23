@@ -990,6 +990,13 @@ $ww : 896;
           line-height:.85em;
           letter-spacing: -0.04em;
           display: inline-block;
+          &.on{
+            .anm_t{
+              span{
+                transform:translateY(0)
+              }
+            }
+          }
         }
         &-txt{
           font-size:1.25em;
@@ -1004,6 +1011,32 @@ $ww : 896;
             background-color: #000;
             margin-right:.5em;
             
+          }
+        }
+
+        .anm_t{
+          overflow: hidden;
+          padding-right:.3em;
+          span{
+            display: block;
+            transform:translateY(100%);
+            transition:transform .7s;
+            
+          }
+          &.d2{
+            span{
+              transition-delay: .2s;
+            }
+          }
+          &.d3{
+            span{
+              transition-delay: .3s;
+            }
+          }
+          &.d5{
+            span{
+              transition-delay: .5s;
+            }
           }
         }
        

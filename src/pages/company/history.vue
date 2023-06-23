@@ -4,8 +4,16 @@ const type:string = "company"
 const info_type:string = "advantage"
 const emit = defineEmits(['p_type'])
 
+const ttl_view = ref<String>('')
+
 onMounted(() => {
   emit('p_type', 'company')
+
+  nextTick(() => {
+    setTimeout(() => {
+      ttl_view.value = 'on'
+    },1500)
+  })
 })
 </script>
 <template>
@@ -21,9 +29,9 @@ onMounted(() => {
     </div>
     <header class="ttlContainer tw-px-8 tw-relative">
       <div class="ttlContainer__inner u_mx">
-        <h2 class="ttlContainer-ttl">
-          <span class="txt tw-block">COMPANY</span>
-          <span class="txt tw-block">INFO</span>
+        <h2 :class="`ttlContainer-ttl ${ttl_view}`">
+          <span class="txt tw-block anm_t"><span>COMPANY</span></span>
+          <span class="txt tw-block anm_t d2"><span>INFO</span></span>
         </h2>
         <p class="ttlContainer-txt tw-font-semibold">SPグループの歴史</p>
       </div>

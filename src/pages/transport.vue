@@ -17,6 +17,8 @@ const _current = ref<string>('')
 //   _cur.classList.add('current')
 // }
 
+const ttl_view = ref<String>('')
+
 const main = ref()
 let ctx;
 
@@ -24,6 +26,11 @@ onMounted(() => {
   emit('p_type', 'transport')
 
   ctx = gsap.context((self) => {
+  nextTick(() => {
+
+    setTimeout(() => {
+
+    
     const blocks = document.querySelectorAll('.blockContainer-block');
     blocks.forEach(
       block => {
@@ -46,11 +53,26 @@ onMounted(() => {
             // markers:true
           }
         })
-      }
-    )
+      })
+
+    },1000)//timeout
+
+    }) //tick
+  }) //ctx
+
+  nextTick(() => {
+    setTimeout(() => {
+      ttl_view.value = 'on'
+    },1500)
   })
 
+})// mounted
+
+onUnmounted(() => {
+  // console.log('clean')
+  ctx.revert(); // <- Easy Cleanup!
 })
+
 </script>
 
 
@@ -67,9 +89,9 @@ onMounted(() => {
     </div>
     <header class="ttlContainer tw-px-8 tw-relative angle_b_t">
       <div class="ttlContainer__inner u_mx">
-        <p class="ttlContainer-ttl">
-          <span class="txt tw-block">OUR</span>
-          <span class="txt tw-block">ADVANTAGE</span>
+        <p :class="`ttlContainer-ttl ${ttl_view}`">
+          <span class="txt tw-block anm_t"><span>OUR</span></span>
+          <span class="txt tw-block anm_t d2"><span>ADVANTAGE</span></span>
         </p>
         <h2 class="ttlContainer-txt tw-font-semibold">トランスポート</h2>
       </div>
