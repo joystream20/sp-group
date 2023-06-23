@@ -4,13 +4,14 @@
     <div class="block">
       <NuxtLink :to="`/company`" class="tw-relative">
         <img src="@/assets/images/page/img_btn_f_1_1.jpg" alt="">
-        <div class="txt">企業情報<font-awesome-icon :icon="['fas', 'angle-right']" /></div>
+        <div class="txt">企業情報<SvgAngleRight /></div>
       </NuxtLink>
     </div>
     <div class="block">
       <NuxtLink :to="`/about`" class="tw-relative">
         <img src="@/assets/images/page/img_btn_f_1_2.jpg" alt="">
-        <div class="txt">SPグループの強み<font-awesome-icon :icon="['fas', 'angle-right']" /></div>
+        <div class="txt">SPグループの強み
+          <SvgAngleRight /></div>
       </NuxtLink>
     </div>
   </div>
@@ -48,6 +49,7 @@
       svg{
         font-size:1.1em;
         margin-left:auto;
+        fill:$col1;
       }
     }
 }

@@ -80,7 +80,7 @@ const dtClick = (e) => {
       <div class="sec sec-btn">
       <div class="sec__inner u_mx">
         <div class="btnContainer md:tw-py-44 tw-py-20 tw-px-8">
-          <NuxtLink :to="`/company/philosophy`" class="btnContainer-btn btn-sc tw-text-def"><span class="txt">経営理念<font-awesome-icon :icon="['fas', 'angle-right']" /></span></NuxtLink>
+          <NuxtLink :to="`/company/philosophy`" class="btnContainer-btn btn-sc tw-text-def"><span class="txt">経営理念<SvgAngleRight /></span></NuxtLink>
         </div>
       </div>
     </div>
@@ -150,7 +150,7 @@ const dtClick = (e) => {
                   <h3 class="name max-md:tw-block tw-font-semibold mac-md:tw-mt-4 md:tw-px-8">株式会社セブンピース</h3>
                   <div class="tw-flex tw-items-center max-md:tw-mt-4 md:tw-flex-1">
                     <span class="content tw-text-sm">事業内容：遊技保管・管理、コンサルタント</span>
-                    <font-awesome-icon :icon="['fass', 'angle-down']" />
+                    <SvgAngleDown />
                   </div>
                 </dt>
                 <dd>
@@ -230,7 +230,7 @@ const dtClick = (e) => {
                   <h3 class="name max-md:tw-block tw-font-semibold mac-md:tw-mt-4 md:tw-px-8">株式会社セブンピースロジスティック</h3>
                   <div class="tw-flex tw-items-center max-md:tw-mt-4 md:tw-flex-1">
                     <span class="content tw-text-sm">事業内容：遊技保管・管理、コンサルタント</span>
-                    <font-awesome-icon :icon="['fass', 'angle-down']" />
+                    <SvgAngleDown />
                   </div>
                 </dt>
                 <dd>
@@ -290,7 +290,7 @@ const dtClick = (e) => {
                   <div class="tw-flex tw-items-center max-md:tw-mt-4 md:tw-flex-1">
                     <span class="content tw-text-sm">東京都経営革新計画承認企業<br>
                     事業内容：新台・中古台販売、遊技機設置</span>
-                    <font-awesome-icon :icon="['fass', 'angle-down']" />
+                    <SvgAngleDown />
                   </div>
                 </dt>
                 <dd>
@@ -365,7 +365,7 @@ const dtClick = (e) => {
                   <h3 class="name max-md:tw-block tw-font-semibold mac-md:tw-mt-4 md:tw-px-8">株式会社ソリッド</h3>
                   <div class="tw-flex tw-items-center max-md:tw-mt-4 md:tw-flex-1">
                     <span class="content tw-text-sm">事業内容：新台・中古台販売、書類作成</span>
-                    <font-awesome-icon :icon="['fass', 'angle-down']" />
+                    <SvgAngleDown />
                   </div>
                 </dt>
                 <dd>

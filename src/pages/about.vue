@@ -66,7 +66,7 @@ onMounted(() => {
                   <span class="txt">トータルサポート</span>
                   <a href="" class="link">
                     <img src="@/assets/images/page/img_company_sec3_list_ttl_01.png" alt="株式会社セブンピース" height="24">
-                    <font-awesome-icon :icon="['fasr', 'angle-right']" />
+                    <SvgAngleRight />
                     </a>
                 </h3>
                 <ul class="spList tw-absolute tw-top-0 tw-right-0 tw-bottom-0 tw-left-0">
@@ -76,11 +76,11 @@ onMounted(() => {
                     <div class="l_image">
                       <a href="" class="link">
                         <img src="@/assets/images/page/img_company_sec3_list_ttl_03.png" alt="株式会社ココプランニング" height="24">
-                        <font-awesome-icon :icon="['fasr', 'angle-right']" />
+                        <SvgAngleRight />
                         </a>
                       <a href="" class="link">
                         <img src="@/assets/images/page/img_company_sec3_list_ttl_04.png" alt="株式会社ソリッド" height="24">
-                        <font-awesome-icon :icon="['fasr', 'angle-right']" />
+                        <SvgAngleRight />
                         </a>
                     </div>
                   </li>
@@ -90,7 +90,7 @@ onMounted(() => {
                     <div class="l_image">
                       <a href="" class="link">
                         <img src="@/assets/images/page/img_company_sec3_list_ttl_03.png" alt="株式会社ココプランニング" height="24">
-                        <font-awesome-icon :icon="['fasr', 'angle-right']" />
+                        <SvgAngleRight />
                         </a>
                     </div>
                   </li>
@@ -100,7 +100,7 @@ onMounted(() => {
                     <div class="l_image">
                       <a href="" class="link">
                         <img src="@/assets/images/page/img_company_sec3_list_ttl_02.png" alt="株式会社セブンピースロジスティック" height="24">
-                        <font-awesome-icon :icon="['fasr', 'angle-right']" />
+                        <SvgAngleRight />
                         </a>
                     </div>
                   </li>
@@ -110,7 +110,7 @@ onMounted(() => {
                     <div class="l_image">
                       <a href="" class="link">
                         <img src="@/assets/images/page/img_company_sec3_list_ttl_05.png" alt="SPキャリア.com" height="24">
-                        <font-awesome-icon :icon="['fasr', 'angle-right']" />
+                        <SvgAngleRight />
                         </a>
                     </div>
                   </li>

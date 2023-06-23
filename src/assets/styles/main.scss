@@ -1418,6 +1418,7 @@ $ww : 896;
                 display: flex;
                 svg{
                   margin-left:auto;
+                  fill:$col1;
                 }
               }
             }
@@ -1484,7 +1485,8 @@ $ww : 896;
                   height:52px;
                 }
                 svg{
-                  font-size: 3em;
+                  font-size: 4em;
+                  fill:#fff;
                   margin-left:auto;
                   transition:transform .5s;
                   padding-top:.2em;
@@ -1875,7 +1877,8 @@ $ww : 896;
                   }
                   svg{
                     margin-left: .5em;
-                    font-size:1.7em;
+                    font-size:2em;
+                    fill:#fff;
                   }
               }
               .spTitle{

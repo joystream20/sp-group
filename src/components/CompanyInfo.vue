@@ -27,7 +27,7 @@ let ttl = ref<string>("")
             <p class="ttlInfoContainer-ttl tw-absolute">COMPANY<br>INFO</p>
           </div>
           <div class="txtInfoContainer">
-            <p class="txtInfoContainer-txt">企業情報<font-awesome-icon :icon="['fass', 'angle-right']" /></p>
+            <p class="txtInfoContainer-txt">企業情報<SvgAngleRight /></p>
           </div>
         </div>
       </NuxtLink>
@@ -39,7 +39,7 @@ let ttl = ref<string>("")
             <p class="ttlInfoContainer-ttl tw-absolute">OUR<br>ADVANTAGE</p>
           </div>
           <div class="txtInfoContainer">
-            <p class="txtInfoContainer-txt">SPグループの強み<font-awesome-icon :icon="['fass', 'angle-right']" /></p>
+            <p class="txtInfoContainer-txt">SPグループの強み<SvgAngleRight /></p>
           </div>
         </div>
       </NuxtLink>
@@ -100,11 +100,12 @@ background: linear-gradient(90deg, rgba(10,55,110,1) 0%, rgba(10,55,110,1) 31%, 
       align-items: center;
     }
     svg{
-      width:20px;
-      height:20px;
+      width:35px;
+      height:35px;
       background:#fff;
       border-radius: 50%;
       color:$col1;
+      fill:$col1;
       padding:.5em;
       margin-left:1em;
       border:1px solid $col1;
@@ -133,8 +134,8 @@ background: linear-gradient(90deg, rgba(10,55,110,1) 0%, rgba(10,55,110,1) 31%, 
       transform:translate(clamp(-172px, #{pvv(-74, 896)}, -74px),-100%);
     }
     svg{
-      width:30px;
-      height:30px;
+      width:48px;
+      height:48px;
       padding:.5em;
     }
   }
