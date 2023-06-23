@@ -14,7 +14,7 @@ const { news } = defineProps<Props>()
     <article v-for="post in news" class="newsList-item" :key="post.id">
       <div class="catContainer">
         <span class="cat tw-text-sm" v-for="cat in post.category" :key="cat.id">
-          <NuxtLink :to="`/cats/${cat.id}/page/1`">{{ cat.name }}</NuxtLink>
+          <NuxtLink :to="`/ncats/${cat.id}/page/1?type=news`">{{ cat.name }}</NuxtLink>
         </span>
       </div>
       <div class="txtContainer tw-flex">

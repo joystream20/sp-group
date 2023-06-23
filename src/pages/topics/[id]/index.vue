@@ -108,20 +108,23 @@ definePageMeta({
           </div>
         </div>
 
-        <div class="postContent" v-html="_body"></div>
-        <div class="pager">
-          <div v-if="prevPost.contents.length > 0 ">
+        <div class="postContent tw-mt-20" v-html="_body"></div>
+        <div class="pager tw-mt-24 md:tw-mt-48">
+          <div v-if="prevPost.contents && prevPost.contents.length > 0 ">
             <NuxtLink :to="`/topics/${prevPost.contents[0].id}`" class="_btn prev"><span class="arrow">&lt;</span></NuxtLink>
           </div>
           <div class="btnContainer">
             <NuxtLink :to="`/topics`" class="btn">一覧へ戻る</NuxtLink>
           </div>
-          <div v-if="nextPost.contents.length > 0 ">
+          <div v-if="nextPost.contents && nextPost.contents.length > 0 ">
             <NuxtLink :to="`/topics/${nextPost.contents[0].id}`" class="_btn next"><span class="arrow">&gt;</span></NuxtLink>
           </div>
         </div>
-            </div>
+
+        <LinkAreaNews />
+        
       </div>
+    </div>
 
   </main>
 </template>

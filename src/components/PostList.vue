@@ -16,7 +16,7 @@ const { topics } = defineProps<Props>()
         <div class="image">
           <NuxtLink :to="`/topics/${topic.id}`"><img :src="topic.icatch.url" alt=""></NuxtLink>
         </div>
-        <div class="txtContainer tw-flex tw-items-center tw-py-2">
+        <div class="txtContainer tw-flex tw-items-center tw-py-6">
           <time class="published">{{ $formatDate(String(topic.publishedAt)) }}</time>
           <ul class="catList">
             <li class="catList-item cat tw-ml-4 tw-text-sm btn" v-for="cat in topic.category" :key="cat.id">

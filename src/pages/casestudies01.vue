@@ -22,7 +22,7 @@ onMounted(() => {
         <h2 class="ttlContainer-ttl">
           <span class="txt tw-block">CASE STUDIES</span>
         </h2>
-        <p class="titleContainer-txt">ホール店舗数：東北県内に23店舗</p>
+        <p class="ttlContainer-txt">ホール店舗数：東北県内に23店舗</p>
       </div>
     </header>
     <article class="secContainer">

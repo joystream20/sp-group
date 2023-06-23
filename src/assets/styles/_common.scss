@@ -15,7 +15,7 @@ $col2: #fff;
 $col3:#edf2f7;
 $col4: #021345;
 
-$colList: $col1,$col2,$col3;
+$colList: $col1,$col2,$col3,$col4;
 
 $break1 : 897;
 
@@ -314,7 +314,7 @@ html{
 
 body{
   line-height: 1.7;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-family: $font1;
 }
 strong{
@@ -322,7 +322,7 @@ strong{
 }
 ul{
   list-style:none;
-  margin:0;
+  // margin:0;
 }
 
 
@@ -337,6 +337,10 @@ $def : 16;
 
 .u_ff4{
   font-family: $font4;
+}
+
+.u_bt_bl{
+  border-top:1px solid $col1;
 }
 
 // .u_no_outline{
@@ -1009,6 +1013,11 @@ $def : 16;
   margin-left: auto;
   margin-right: auto;
 }
+.u_mx1000{
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
 // .u_mx_def{
 //   max-width:1380px;
 //   margin-left:auto;
@@ -1036,8 +1045,35 @@ $def : 16;
 //   width:auto;
 // }
 
+.u_px{
+  padding-left:20px;
+  padding-right:20px;
+}
+.u_px10{
+  padding-left:10px;
+  padding-right:10px;
+}
+.u_px30{
+  padding-left:30px;
+  padding-right:30px;
+}
+// .u_px_sp30{
+//   padding-left: 30px;
+//   padding-right: 30px;
+// }
 
+@for $i from 1 through 10{
+  .u_px_sp#{$i}{
+    padding-left: #{$i * 10}px;
+    padding-right: #{$i * 10}px;
+  }
+  
+}
 
+.u_nw{
+  white-space: nowrap;
+  display: inline-block;
+}
 .u_sp{
 }
 .u_sp_64{
@@ -1211,10 +1247,13 @@ $i:1;
 
 
 
-@media screen and (min-width: 641px) {
+@media screen and (min-width: 640px) {
+  body{
+    font-size:1.6rem;
+  }
 }
 
-@media screen and (min-width: 897px) {
+@media screen and (min-width: 896px) {
   .u_sp{
     display: none;
     }
@@ -1224,5 +1263,14 @@ $i:1;
     .u_pc{
     display: block;
     }
-    
+
+    // .u_px{
+    //   padding-left:50px;
+    //   padding-right:50px;
+    // }
+
+    [class *= 'u_px_sp']{
+      padding-left:0;
+      padding-right:0;
+    }
 }

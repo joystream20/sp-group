@@ -25,12 +25,13 @@ onMounted(() => {
         <h2 class="ttlContainer-ttl">
           <span class="txt tw-block">TOPICS</span>
         </h2>
-        <p class="titleContainer-txt">トピックス</p>
+        <p class="ttlContainer-txt">トピックス</p>
       </div>
     </header>
     <article class="postContainer">
       <div class="postContainer__inner u_mx">
-        <Topic :page=1 :belongsTo="type"/>
+        <Topic :page=1 :belongsTo="type" :path="`/topics/page`" />
+        <LinkAreaNews />
       </div>
     </article>
   </main>

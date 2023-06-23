@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 const {data: news} = await useFetch('/api/newsList')
+const type:string = "news"
 
 const emit = defineEmits(['p_type'])
 
@@ -24,12 +25,14 @@ onMounted(() => {
         <h2 class="ttlContainer-ttl">
           <span class="txt tw-block">NEWS</span>
         </h2>
-        <p class="titleContainer-txt">ニュース</p>
+        <p class="ttlContainer-txt">ニュース</p>
       </div>
     </header>
     <article class="postContainer">
       <div class="postContainer__inner u_mx">
-        <NewsList :news="news.contents" />
+        <!-- <NewsList :news="news.contents" /> -->
+        <News :page=1 :belongsTo="type" :path="`/news/page`" />
+        <LinkAreaNews />
       </div>
     </article>
   </main>

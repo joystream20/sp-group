@@ -8,7 +8,10 @@ export default defineNuxtConfig({
     serviceDomain:SERVICE_DOMAIN
   },
   modules: ["@nuxtjs/tailwindcss","@nuxtjs/device"],
-  css:['modern-css-reset','~/assets/css/reset.css','~/assets/css/style.css','@/assets/styles/main.scss'],
+  css:['modern-css-reset','~/assets/css/reset.css','~/assets/css/style.css','@/assets/styles/main.scss','@fortawesome/fontawesome-svg-core/styles.css'],
+  build: {
+    transpile: ['gsap'],
+  },
   vite: {
     css: {
       preprocessorOptions: {
@@ -20,6 +23,6 @@ export default defineNuxtConfig({
   },
   app: {
     pageTransition: {name: 'page', mode: 'out-in'
-  }
+}
   }
 })

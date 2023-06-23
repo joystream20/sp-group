@@ -29,8 +29,10 @@ module.exports = {
       '2xl': '1.25em',
       '3xl': '1.375em',
       '4xl': '1.5em',
+      '5xl': '2em',
       '6xl': '2.125em',
-      '10xl': '5em'
+      '10xl': '5em',
+      'def': '16px'
     }
   },
   plugins: [],

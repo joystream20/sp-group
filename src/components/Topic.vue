@@ -6,10 +6,11 @@ import { POST_PER_PAGE } from '../setting/siteSetting';
 type Props = {
   page: number,
   catId?:string,
-  belongsTo:string | undefined
+  belongsTo:string | undefined,
+  path: string
 }
 
-const { page, catId, belongsTo } = defineProps<Props>()
+const { page, catId, belongsTo, path } = defineProps<Props>()
 
 const limit = POST_PER_PAGE
 const queries:MicroCMSQueries = {
@@ -42,14 +43,16 @@ const numPages = Math.ceil(topics.value.totalCount / limit)
 
 <template>
   <div>
-    <div class="postContainer">
+    <div class="archiveNavContainer md:tw-flex tw-justify-end">
+      <Cats :cats="cats.contents" :selectedCatId="catId" :belongsTo="belongsTo" />
+    </div>
+    <div class="listContainer tw-mt-24 md:tw-mt-36">
       <PostList :topics="topics.contents" />
     </div>
-    <div class="catContainer">
-      <Cats :cats="cats.contents" :selectedTagId="catId" :belongsTo="belongsTo" />
-    </div>
-    <div class="pagerContainer">
-      <Pagination :numPages="numPages" :current="page" />
+    
+    <div class="pagerContainer tw-mt-24 md:tw-mt-36">
+      <!-- <p>-{{ path }}-</p> -->
+      <Pagination :numPages="numPages" :current="page" :path="path" :belongsTo="belongsTo" />
     </div>
   </div>
 </template>
