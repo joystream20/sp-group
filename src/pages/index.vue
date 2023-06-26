@@ -40,7 +40,7 @@ onMounted(() => {
       try {
         await video.play()
         video.addEventListener('ended', () => {
-          console.log('loop')
+          // console.log('loop')
           video.play()
         })
       } catch(err){

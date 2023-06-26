@@ -18,7 +18,7 @@ const tScroll = (_tscroll:string) => {
 
 const { isMobile, isTablet, isDesktop } = useDevice()
 
-const _ua = (() => {
+const _ua = ref((() => {
   if(isMobile){
     return "mobile"
   }else if(isTablet){
@@ -26,7 +26,7 @@ const _ua = (() => {
   }else if(isDesktop){
     return "pc"
   }
-})()
+})())
 
 // life cycle
 // onUnmounted(() => { console.log('unmounts')})
