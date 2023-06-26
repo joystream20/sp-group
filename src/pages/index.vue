@@ -173,7 +173,7 @@ const objClass : object = {
   <main class="site-main top" ref="main">
     <div class="heroContainer tw-relative tw-w-full tw-aspect-video" :class="objClass">
       <div class="videoContainer">
-      <video id="video" src="@/assets/movie/DJI_0015.mp4" muted></video>
+      <video id="video" src="@/assets/movie/DJI_0015.mp4" muted playsinline autoplay></video>
    </div>
       <div class="imageContainer tw-absolute tw-inset-0 tw-w-full">
         <div class="imageContainer-image tw-absolute">
