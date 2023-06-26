@@ -122,7 +122,9 @@ onMounted(() => {
 
 onUnmounted(() => {
   // console.log('clean')
+  // console.log(ctx)
   ctx.revert(); // <- Easy Cleanup!
+  // console.log(ctx)
 })
 
 </script>
