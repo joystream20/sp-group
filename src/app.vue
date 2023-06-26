@@ -51,7 +51,7 @@ if (process.client) {
 
 <template>
   <div :class="`${ptype} site ${_ua}`">
-    <p class="ua">{{ _ua }}</p>
+    <p class="ua tw-absolute">{{ _ua }}</p>
     <Header :p_type="ptype" :t_scroll="tscroll" />
     <NuxtLayout>
       <NuxtLoadingIndicator 
