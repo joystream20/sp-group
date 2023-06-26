@@ -2224,6 +2224,11 @@ $ww : 896;
     .site-main{
       &.top{
         .heroContainer{
+          .videoContainer{
+            &:before{
+              content:none;
+            }
+          }
           .imageContainer{
             &-image{
               width:auto !important;
