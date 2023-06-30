@@ -483,6 +483,33 @@ const dtClick = (e) => {
                   事業内容：全国遊技機配送
                 </dd>
               </div>
+              <div class="tieupList-item tw-mb-12">
+                <dt class="tw-font-semibold tw-text-2xl">株式会社ソラル</dt>
+                <dd>
+                  東京都品川区勝島1-3-49 加瀬ビル116 7F<br>
+                  TEL：03-5763-7773
+                </dd>
+              </div>
+              <div class="tieupList-item tw-mb-12">
+                <dt class="tw-font-semibold tw-text-2xl">SALES　GO株式会社</dt>
+                <dd>
+                  〒140-0002　東京都品川区東品川四丁目13-14グラスキューブ品川
+                </dd>
+              </div>
+              <div class="tieupList-item tw-mb-12">
+                <dt class="tw-font-semibold tw-text-2xl">株式会社クラッチコミュニケーション</dt>
+                <dd>
+                  〒106-0046 東京都港区元麻布３丁目１?35VORT 5F<br>
+                  TEL：03-6435-2510
+                </dd>
+              </div>
+              <div class="tieupList-item tw-mb-12">
+                <dt class="tw-font-semibold tw-text-2xl">株式会社サンライン</dt>
+                <dd>
+                  〒412-0047　静岡県御殿場市神場2丁目10番<br>
+                  TEL：0550-80-3288
+                </dd>
+              </div>
             </dl>
           </div>
         </div>

@@ -1931,7 +1931,7 @@ $ww : 896;
               }
               .spTitle{
                 inset: 0;
-                width:30%;
+                width:31%;
                 position:absolute;
                 margin:auto;
                 aspect-ratio: 1/1;
@@ -1951,6 +1951,10 @@ $ww : 896;
                   top:0;right:0;bottom:0;left:0;
                   transform:rotate(45deg);
                   border:1px solid #fff;
+                }
+                .link{
+                  margin-left:-1em;
+                  margin-right:-1em;
                 }
                 svg{
                   margin-left:.3em;
