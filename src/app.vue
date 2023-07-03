@@ -4,6 +4,8 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
+const site = ref(null)
+
 const ptype  = ref<string>('top')
 const tscroll = ref<string>('')
 
@@ -37,6 +39,7 @@ onBeforeUpdate(() => {
 // onUpdated(() => { console.log('updated') })
 onActivated(() => { console.log('onactive') })
 onMounted(() => { 
+  
   setTimeout(() => {
     if(isMobile){
     _ua.value = 'mobile'
@@ -46,6 +49,7 @@ onMounted(() => {
     _ua.value = 'pc'
   }
   console.log(_ua.value)
+  console.log(site.value.classList)
   },500)
   
   // console.log('onMounted app')
@@ -60,7 +64,7 @@ if (process.client) {
 </script>
 
 <template>
-  <div :class="`${ptype} site ${_ua}`">
+  <div :class="`${ptype} site ${_ua}`" ref="site">
     <p class="ua tw-absolute">{{ _ua }}</p>
     <Header :p_type="ptype" :t_scroll="tscroll" />
     <NuxtLayout>
