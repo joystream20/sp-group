@@ -37,13 +37,17 @@ onBeforeUpdate(() => {
 // onUpdated(() => { console.log('updated') })
 onActivated(() => { console.log('onactive') })
 onMounted(() => { 
-  if(isMobile){
+  setTimeout(() => {
+    if(isMobile){
     _ua.value = 'mobile'
   }else if(isTablet){
     _ua.value = 'tablet'
   }else if(isDesktop){
     _ua.value = 'pc'
   }
+  console.log(_ua.value)
+  },500)
+  
   // console.log('onMounted app')
 
 if (process.client) {
