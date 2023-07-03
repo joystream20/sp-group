@@ -43,13 +43,18 @@ onMounted(() => {
   setTimeout(() => {
     if(isMobile){
     _ua.value = 'mobile'
+    console.log(site.value.classList)
+    if(site.value.classList.contains('pc')){
+      site.value.classList.remove('pc')
+      site.value.classList.add('mobile')
+    }
   }else if(isTablet){
     _ua.value = 'tablet'
   }else if(isDesktop){
     _ua.value = 'pc'
   }
   console.log(_ua.value)
-  console.log(site.value.classList)
+  
   },500)
   
   // console.log('onMounted app')
