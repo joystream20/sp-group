@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { MicroCMSQueries } from 'microcms-js-sdk';
-import { onMounted, onUnmounted, nextTick } from 'vue';
+import { onMounted, onUnmounted, nextTick, reactive } from 'vue';
 import gsap from 'gsap';
 
 
@@ -163,9 +163,9 @@ onUnmounted(() => {
 
 const breakPoint = <string>"896"
 
-const objClass : object = {
+const objClass : object = reactive({
   'tw-h-screen' : isMobile || isTablet
-}
+})
 
 </script>
 
