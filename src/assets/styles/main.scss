@@ -2231,6 +2231,7 @@ $ww : 896;
     .site-main{
       &.top{
         .heroContainer{
+          height:100vh;
           .videoContainer{
             &:before{
               content:none;
