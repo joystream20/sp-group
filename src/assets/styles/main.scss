@@ -441,6 +441,7 @@ $ww : 896;
               // width:90%;
               color:$col1;
               font-family: $font4;
+              font-style: italic;
               font-size:clamp(50px, #{pvv(146, 1040)}, 146px);//3.125em;
               line-height: .85em;
               letter-spacing: -.04em;
@@ -481,6 +482,7 @@ $ww : 896;
                     content:"SP GROUP";
                     color:rgba(#fff, .2);
                     font-family: $font4;
+                    font-style: italic;
                     font-size:4.45em;
                     line-height: 1;
                     padding-left:.2em;
@@ -997,6 +999,7 @@ $ww : 896;
         padding-bottom:clamp(85px, #{pvv(160, 1040)}, 260px);
         &-ttl{
           font-family: $font4;
+          font-style: italic;
           font-size:clamp(52px, #{pvv(125, 1040)}, 125px);
           color:$col1;
           line-height:.85em;
@@ -1261,6 +1264,7 @@ $ww : 896;
                   margin-left:1.2em;
                   .stp{
                     font-family: $font4;
+                    font-style:italic;
                     font-size:2.3em;
                     line-height: 1;
                     .num{
@@ -1406,6 +1410,7 @@ $ww : 896;
                 display: block;
                 font-size:clamp(48px, #{pvv(80, $ww)}, 80px);
                 font-family: $font4;
+                font-style:italic;
                 letter-spacing: -.05em;
                 margin-left:-16%;
                 margin-top:.3em;
@@ -1600,6 +1605,7 @@ $ww : 896;
               display: block;
               color:$col3;
               font-family: $font4;
+              font-style:italic;
               font-size:clamp(80px, #{pvv(80, 390)}, 176px);
               position:absolute;
               right:0;
@@ -1830,6 +1836,7 @@ $ww : 896;
               letter-spacing: -.05em;
               .num{
                 font-family: $font4;
+                font-style:italic;
                 font-size:3.1em;
               }
             }
@@ -2077,6 +2084,7 @@ $ww : 896;
                 &:after{
                   content:"";
                   font-family: $font4;
+                  font-style:italic;
                   color:rgba($col1, .2);
                   font-size:2.45em;
                   letter-spacing: -.05em;
@@ -2172,6 +2180,7 @@ $ww : 896;
             position:absolute;
             left:0;
             font-family: $font4;
+            font-style:italic;
             color:$col3;
             font-size:clamp(83px, #{pvv(170,1040)}, 170px);//83px;
             letter-spacing: -.05em;
