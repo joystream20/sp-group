@@ -69,54 +69,54 @@ onMounted(() => {
           <div class="imageContainer tw-relative tw-max-w">
                 <h3 class="spTitle">
                   <span class="txt">トータルサポート</span>
-                  <a href="" class="link">
+                  <NuxtLink :to="`/company#gp1`" class="link">
                     <img src="@/assets/images/page/img_company_sec3_list_ttl_01.png" alt="株式会社セブンピース" height="24">
                     <SvgAngleRight />
-                    </a>
+                  </NuxtLink>
                 </h3>
                 <ul class="spList tw-absolute tw-top-0 tw-right-0 tw-bottom-0 tw-left-0">
                   <li class="spList-item">
                     <h4 class="sp-ttl">ソリューション</h4>
                     <p class="sp-txt">販売提案営業<br>書類作成代行<br>設置代行</p>
                     <div class="l_image">
-                      <a href="" class="link">
+                      <NuxtLink :to="`/company#gp3`" class="link">
                         <img src="@/assets/images/page/img_company_sec3_list_ttl_03.png" alt="株式会社ココプランニング" height="24">
                         <SvgAngleRight />
-                        </a>
-                      <a href="" class="link">
+                        </NuxtLink>
+                      <NuxtLink :to="`/company#gp4`" class="link">
                         <img src="@/assets/images/page/img_company_sec3_list_ttl_04.png" alt="株式会社ソリッド" height="24">
                         <SvgAngleRight />
-                        </a>
+                        </NuxtLink>
                     </div>
                   </li>
                   <li class="spList-item">
                     <h4 class="sp-ttl">ロジスティック</h4>
                     <p class="sp-txt">システム管理<br>（SP.Ⅱシステム）<br>保管管理業務<br>洗浄・メンテナンス</p>
                     <div class="l_image">
-                      <a href="" class="link">
+                      <NuxtLink :to="`/company#gp1`" class="link">
                         <img src="@/assets/images/page/img_company_sec3_list_ttl_01.png" alt="株式会社セブンピース" height="24">
                         <SvgAngleRight />
-                        </a>
+                        </NuxtLink>
                     </div>
                   </li>
                   <li class="spList-item">
                     <h4 class="sp-ttl">トランスポート</h4>
                     <p class="sp-txt">精密機器配送</p>
                     <div class="l_image">
-                      <a href="" class="link">
+                      <NuxtLink :to="`/company#gp2`" class="link">
                         <img src="@/assets/images/page/img_company_sec3_list_ttl_02.png" alt="株式会社セブンピースロジスティック" height="24">
                         <SvgAngleRight />
-                        </a>
+                        </NuxtLink>
                     </div>
                   </li>
                   <li class="spList-item">
                     <h4 class="sp-ttl">キャリア</h4>
                     <p class="sp-txt">人材紹介<br>人材派遣</p>
                     <div class="l_image">
-                      <a href="" class="link">
+                      <NuxtLink :to="`https://sp-career.com/`" class="link" target="_blank">
                         <img src="@/assets/images/page/img_company_sec3_list_ttl_05.png" alt="SPキャリア.com" height="24">
                         <SvgAngleRight />
-                        </a>
+                        </NuxtLink>
                     </div>
                   </li>
                 </ul>

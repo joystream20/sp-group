@@ -5,38 +5,87 @@ const type:string = "company"
 const info_type:string = "advantage"
 const emit = defineEmits(['p_type'])
 
-const _hash = route.hash
+const main = ref(null)
 
-console.log(_hash)
 
 const ttl_view = ref<String>('')
+
+const _hash = ref<string>('')
+
+if(_hash){
+  // console.log(_hash)
+  _hash.value = route.hash.replace('#','')
+  // ddOpen(_hash)
+}
+
 
 onMounted(() => {
   emit('p_type', 'company')
 
+ 
+
   nextTick(() => {
     setTimeout(() => {
       ttl_view.value = 'on'
-    },1500)
+    
+    const _dl = main.value.querySelector('#'+_hash.value)
+    const _dt = _dl.querySelector('dt')
+    const _dd = _dl.querySelector('dd')
+ 
+    if(_dt.classList.contains('on')){
+      _dt.classList.remove('on')
+      _dd.style.maxHeight=""
+    }else{
+      console.log(_dd.querySelector('.dd__inner').offsetHeight)
+      _dt.classList.add('on')
+      _dd.style.maxHeight = _dd.querySelector('.dd__inner').offsetHeight + "px"
+    }
+
+  },1500)
   })
+
+  
+
 })
 
-const dtClick = (e) => {
-  const _dt = <HTMLElement>e.currentTarget
-  const _dd = <HTMLElement>e.currentTarget.nextElementSibling
+const ddClose = () => {
+  const _dl = document.querySelectorAll('.groupList > div')
+  _dl.forEach(
+    _block => {
+      _block.querySelector('dt').classList.remove('on')
+      _block.querySelector('dd').style.maxHeight=""
+    }
+  )
+}
+
+const ddOpen = (_id:string) => {
+  
+  // console.log(_id)
+  const _dl = document.getElementById(_id)
+  const _dt = _dl.querySelector('dt')
+  const _dd = _dl.querySelector('dd')
   if(_dt.classList.contains('on')){
     _dt.classList.remove('on')
     _dd.style.maxHeight=""
   }else{
     _dt.classList.add('on')
     _dd.style.maxHeight = _dd.querySelector('.dd__inner').offsetHeight + "px"
-    
   }
+  // console.log(_dl)
 }
+
+const dtClick = (e) => {
+  const _dt = <HTMLElement>e.currentTarget
+    ddOpen(_dt.closest('.groupList-block').id)
+}
+
+onUnmounted(() => {
+  ddClose();
+})
 
 </script>
 <template>
-  <main class="site-main company page">
+  <main class="site-main company page" ref="main">
     <div class="breadContainer">
       <div class="breadList tw-flex tw-justify-end">
         <NuxtLink :to="`/`">ホーム</NuxtLink>

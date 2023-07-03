@@ -37,8 +37,14 @@ onBeforeUpdate(() => {
 // onUpdated(() => { console.log('updated') })
 onActivated(() => { console.log('onactive') })
 onMounted(() => { 
-  
-  console.log('onMounted app')
+  if(isMobile){
+    _ua.value = 'mobile'
+  }else if(isTablet){
+    _ua.value = 'tablet'
+  }else if(isDesktop){
+    _ua.value = 'pc'
+  }
+  // console.log('onMounted app')
 
 if (process.client) {
   console.log('process client')
@@ -71,7 +77,7 @@ if (process.client) {
   transition: all .7s .3s;
 }
 .page-leave-active{
-  transition: all .7s;
+  transition: all .5s;
 }
 
 .page-enter-from,

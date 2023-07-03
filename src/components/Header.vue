@@ -210,7 +210,7 @@ const btnClick = () => {
                 </div>
               </li>
               <li class="gnavList-item">
-                <NuxtLink :to="`/#casestudies`" class="txt">事例</NuxtLink>
+                <NuxtLink to="/#casestudies" class="txt">事例</NuxtLink>
               </li>
               <li v-if="!sp" class="gnavList-item">
                 <NuxtLink :to="`/news`" class="txt">ニュース</NuxtLink>

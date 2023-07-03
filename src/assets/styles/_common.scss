@@ -307,10 +307,16 @@ a{
 
 html{
   font-size: 62.5%;
+  scroll-padding-top: var(--hh);
   &.gmaps{
     height:100%;
   }
 }
+
+[id]{
+  scroll-margin-top: var(--hh);
+}
+
 
 body{
   line-height: 1.7;
