@@ -1,5 +1,11 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
+
+useHead({
+  title: 'ニュース | SPグループ',
+  meta:[]
+})
+
 const {data: news} = await useFetch('/api/newsList')
 const type:string = "news"
 
@@ -36,7 +42,7 @@ onMounted(() => {
         <p class="ttlContainer-txt">ニュース</p>
       </div>
     </header>
-    <article class="postContainer">
+    <article class="postContainer tw-px-8">
       <div class="postContainer__inner u_mx">
         <!-- <NewsList :news="news.contents" /> -->
         <News :page=1 :belongsTo="type" :path="`/news/page`" />

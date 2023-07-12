@@ -2,7 +2,16 @@
 import { ref, onMounted } from 'vue'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+// import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+
+useHead({
+  title: 'SPグループ',
+  meta: [
+    {name: 'description', content: 'SPグループでは、すべての業務を包括し、お客様にワンストップでご提供しています。それが、他社にはない、SPグループの大きな強みです。'}
+  ]
+})
+
+const firstTime = useState('first',() => true)
 
 const site = ref(null)
 
@@ -70,7 +79,7 @@ if (process.client) {
 
 <template>
   <div :class="`${ptype} site ${_ua}`" ref="site">
-    <p class="ua tw-absolute">{{ _ua }}</p>
+    <!-- <p class="ua tw-absolute">{{ _ua }}</p> -->
     <Header :p_type="ptype" :t_scroll="tscroll" />
     <NuxtLayout>
       <NuxtLoadingIndicator 

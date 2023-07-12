@@ -1,6 +1,13 @@
 
 <script setup lang="ts">
 import { onMounted } from 'vue';
+
+useHead({
+  title: 'トピックス | SPグループ',
+  meta:[]
+})
+
+
 const {data: topics} = await useFetch('/api/postList')
 const type:string = "topics"
 
@@ -36,7 +43,7 @@ onMounted(() => {
         <p class="ttlContainer-txt">トピックス</p>
       </div>
     </header>
-    <article class="postContainer">
+    <article class="postContainer tw-px-8">
       <div class="postContainer__inner u_mx">
         <Topic :page=1 :belongsTo="type" :path="`/topics/page`" />
         <LinkAreaNews />

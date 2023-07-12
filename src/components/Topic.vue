@@ -43,7 +43,7 @@ const numPages = Math.ceil(topics.value.totalCount / limit)
 
 <template>
   <div>
-    <div class="archiveNavContainer md:tw-flex tw-justify-end">
+    <div class="archiveNavContainer tw-flex tw-justify-end">
       <Cats :cats="cats.contents" :selectedCatId="catId" :belongsTo="belongsTo" />
     </div>
     <div class="listContainer tw-mt-24 md:tw-mt-36">

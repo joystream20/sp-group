@@ -2,6 +2,10 @@
 import { onMounted } from 'vue';
 import { gsap } from 'gsap';
 // import { ScrollTrigger } from 'gsap/ScrollTrigger';
+useHead({
+  title: 'ロジスティック | SPグループ',
+  meta:[]
+})
 
 
 const emit = defineEmits(['p_type'])
@@ -32,8 +36,11 @@ const padT:string = ua == 'mobile' ? 'top 10%' : 'top 20%'
 
 const ttl_view = ref<String>('')
 
-const main = ref()
+//const main = ref()
+const sec1 = ref()
+const sec3 = ref()
 let ctx;
+let ctx2;
 
 
 onMounted(() => {
@@ -51,42 +58,56 @@ onMounted(() => {
     // setTimeout( () => {
     //   console.log(listEl[0],listEl[0].clientWidth, listWrapperEl[0])
     // },500)
-    nextTick(() => {
 
-    const blocks = self.selector('.blockContainer-block')
-    blocks.forEach(
-      block => {
-        gsap.to(block, {
-          scrollTrigger: {
-            trigger: block,
-            start: 'top 124px',
-            onEnter: () => {
-              // console.log(block.id + "- enter")
-              _current.value = block.id
-            },
-            onLeave: () => {
-              // console.log(block.id + "- leave")
-              // _current.value = block.id
-            },
-            onLeaveBack: () => {
-              // console.log(block.id+ "- leaveBack")
-              _current.value = block.id
-            },
-            // markers:true
-          }
-        })
-      })
-    
 
-    
+    //nextTick(() => {
       setTimeout(() => {
 
-        const listWrapperEl = self.selector('.meritList-wrap')[0]
-        const listEl = self.selector('.meritList')[0]
+      
+        const blocks = self.selector('.blockContainer-block')
+        blocks.forEach(
+          block => {
+            gsap.to(block, {
+              scrollTrigger: {
+                trigger: block,
+                start: 'top 124px',
+                onEnter: () => {
+                  // console.log(block.id + "- enter")
+                  _current.value = block.id
+                },
+                onLeave: () => {
+                  // console.log(block.id + "- leave")
+                  // _current.value = block.id
+                },
+                onLeaveBack: () => {
+                  // console.log(block.id+ "- leaveBack")
+                  //_current.value = block.id
+                  const _nextNum = parseInt(block.id.replace('sl',''))-1
+                  if(_nextNum > 0){
+                    _current.value = "sl"+_nextNum//block.id
+                  }
+                },
+                // markers:true
+              }
+            })
+          })
+      },1000)
 
-        console.log(listEl.clientWidth)
+    //})
 
-         gsap.to(listEl, {
+
+  },sec1.value)
+
+  ctx2 = gsap.context((self) => {
+
+    const listWrapperEl = self.selector('.meritList-wrap')[0]
+    const listEl = self.selector('.meritList')[0]
+
+    setTimeout(() => {
+
+      console.log(listEl.clientWidth)
+
+      gsap.to(listEl, {
         x: () => -(listEl.clientWidth - listWrapperEl.clientWidth),
         ease: 'none',
         scrollTrigger: {
@@ -102,12 +123,7 @@ onMounted(() => {
       })
 
       },1200)
-
-    })
-
-      
-
-  },main.value)
+  },sec3.value)
 
   
   nextTick(() => {
@@ -123,7 +139,8 @@ onMounted(() => {
 onUnmounted(() => {
   // console.log('clean')
   // console.log(ctx)
-  ctx.revert(); // <- Easy Cleanup!
+  ctx.revert();
+  ctx2.revert();
   // console.log(ctx)
 })
 
@@ -151,9 +168,9 @@ onUnmounted(() => {
       </div>
       <p class="header-txt u_mx tw-mt-12 md:tw-mt-16">独自の在庫管理システムとプロフェッショナルな倉庫作業でミスなく、確実な流通へ展開することが可能です。</p>
     </header>
-    <article class="secContainer" ref="main">
+    <article class="secContainer" >
       
-        <section class="sec sec1 angle_b_b u_px30">
+        <section class="sec sec1 angle_b_b u_px30" ref="sec1">
           <div class="sec__inner u_mx md:tw-flex">
             <div class="blkNavContainer tw-hidden md:tw-block">
               <ul class="blkNav">
@@ -212,7 +229,7 @@ onUnmounted(() => {
             </div>
           </div>
         </section>
-        <section class="sec3 sec">
+        <section class="sec3 sec" ref="sec3">
           <div class="sec__inner">
             <h3 class="ttl tw-text-xl md:tw-text-2xl tw-font-semibold u_col1 u_mx u_px30">SP.Ⅱシステム導入の7つのメリット</h3>
             <div class="meritList-wrap">

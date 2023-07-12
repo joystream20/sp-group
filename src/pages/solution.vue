@@ -2,6 +2,11 @@
 import { onMounted } from 'vue';
 import { gsap } from 'gsap';
 
+useHead({
+  title: 'ソリューション | SPグループ',
+  meta:[]
+})
+
 const emit = defineEmits(['p_type'])
 
 const _current = ref<string>('')
@@ -17,7 +22,7 @@ const _current = ref<string>('')
 //   _cur.classList.add('current')
 // }
 
-const main = ref()
+const sec1 = ref()
 let ctx;
 
 const ttl_view = ref<String>('')
@@ -27,38 +32,41 @@ onMounted(() => {
 
   ctx = gsap.context((self) => {
 
-    nextTick(() => {
+    // nextTick(() => {
     
       setTimeout(() => {
 
-     
-    const blocks = document.querySelectorAll('.blockContainer-block');
-    console.log(blocks)
-    blocks.forEach(
-      block => {
-        gsap.to(block, {
-          scrollTrigger: {
-            trigger: block,
-            start: 'top 124px',
-            onEnter: () => {
-              // console.log(block.id + "- enter")
-              _current.value = block.id
-            },
-            onLeave: () => {
-              // console.log(block.id + "- leave")
-              // _current.value = block.id
-            },
-            onLeaveBack: () => {
-              // console.log(block.id+ "- leaveBack")
-              _current.value = block.id
-            },
-            // markers:true
-          }
-        })
-      })
-    },1000)
-    }) //tick
-  }) //ctx
+        const blocks = self.selector('.blockContainer-block');
+        console.log(blocks)
+        blocks.forEach(
+          block => {
+            gsap.to(block, {
+              scrollTrigger: {
+                trigger: block,
+                start: 'top 124px',
+                onEnter: () => {
+                  // console.log(block.id + "- enter")
+                  _current.value = block.id
+                },
+                onLeave: () => {
+                  console.log(block.id + "- leave")
+                  // _current.value = block.id
+                },
+                onLeaveBack: () => {
+                  // console.log(block.id, "repace="+(parseInt(block.id.replace('sl',''))-1))
+                  // console.log(block.id+ "- leaveBack")
+                  const _nextNum = parseInt(block.id.replace('sl',''))-1
+                  if(_nextNum > 0){
+                    _current.value = "sl"+_nextNum//block.id
+                  }
+                },
+                // markers:true
+              }
+            })
+          })
+      },1000)
+    // }) //tick
+  },sec1.value) //ctx
 
   nextTick(() => {
     setTimeout(() => {
@@ -108,9 +116,9 @@ const close = () => {
       </div>
       <p class="header-txt u_mx tw-mt-12 md:tw-mt-16">いち早い対応で、ホール様や販売会社様の利益に貢献できる体制を整えています。中古遊技機販売はもちろん、新台販売も行っています。</p>
     </header>
-    <article class="secContainer" ref="main">
+    <article class="secContainer">
       
-        <section class="sec sec1 angle_b_b u_px30">
+        <section class="sec sec1 angle_b_b u_px30" ref="sec1">
           <div class="sec__inner u_mx md:tw-flex">
             <div class="blkNavContainer tw-hidden md:tw-block">
               <ul class="blkNav">

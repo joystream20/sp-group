@@ -1,22 +1,38 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
+import gsap from 'gsap';
+
+
+useHead({
+  title: '企業情報 | SPグループ',
+  meta:[]
+})
+
 const route = useRoute()
 const type:string = "company"
 const info_type:string = "advantage"
 const emit = defineEmits(['p_type'])
 
-const main = ref(null)
+const main = ref<HTMLElement>(null)
 
 
 const ttl_view = ref<String>('')
 
 const _hash = ref<string>('')
 
+const sec4 = ref()
+const sec1 = ref()
+let ctx1,ctx2,tl1;
+
 if(_hash){
   // console.log(_hash)
   _hash.value = route.hash.replace('#','')
   // ddOpen(_hash)
 }
+
+const { first } = firstTime();
+
+console.log("first=",first.value)
 
 
 onMounted(() => {
@@ -27,7 +43,7 @@ onMounted(() => {
   nextTick(() => {
     setTimeout(() => {
       ttl_view.value = 'on'
-    
+    if(_hash.value){
     const _dl = main.value.querySelector('#'+_hash.value)
     const _dt = _dl.querySelector('dt')
     const _dd = _dl.querySelector('dd')
@@ -40,8 +56,59 @@ onMounted(() => {
       _dt.classList.add('on')
       _dd.style.maxHeight = _dd.querySelector('.dd__inner').offsetHeight + "px"
     }
+  }
+
 
   },1500)
+
+  ctx2 = gsap.context((self) => {
+    const sec1_txtContainer = self.selector('.txtContainer')
+    const sec1_ttl = self.selector('.sec__header-ttl img')
+    const sec1_image = self.selector('.image')
+    const sec1_text1 = self.selector('.txtContainer__inner')
+
+    gsap.set(sec1_ttl, {opacity:0, x:'20%'})
+    gsap.set(sec1_image, {opacity:0, y:'20%'})
+    gsap.set(sec1_text1, {opacity:0, y:'20%' })
+
+    setTimeout(() => {
+      gsap.to(sec1_txtContainer,{
+        scrollTrigger: {
+          trigger: sec1_txtContainer,
+          start: 'top bottom-=10%',
+          onEnter: (e) => {
+            tl1.play()
+          }
+        }
+      })
+      tl1 = gsap.timeline({paused: true})
+      tl1.to(sec1_image, {opacity:1, y:0, duration:.7 },'-=.2')
+      tl1.to(sec1_text1, {opacity:1, y:0, duration:.7 },'-=.2')
+      tl1.to(sec1_ttl, {opacity:1, x:0, duration:.7 }, '-=.2')
+      
+    },1000)
+
+  },sec1.value)
+
+  ctx1 = gsap.context((self) => {
+
+    const sec4ttl = self.selector('.bgttl .txt')
+
+    gsap.set(sec4ttl, {y:'100%'})
+
+    setTimeout(() => {
+      gsap.to(sec4ttl, {
+        y:0,
+        duration:.7,
+        scrollTrigger: {
+          trigger: sec4ttl,
+          start: 'center bottom-=20%',
+        }
+      })
+    }, 1000)
+
+  },sec4.value)
+
   })
 
   
@@ -81,6 +148,8 @@ const dtClick = (e) => {
 
 onUnmounted(() => {
   ddClose();
+  ctx1.revert()
+  ctx2.revert()
 })
 
 </script>
@@ -103,7 +172,7 @@ onUnmounted(() => {
       </div>
     </header>
     <article class="secContainer">
-      <section class="sec sec1 angle">
+      <section class="sec sec1 angle" ref="sec1">
         <div class="sec__inner">
           <header class="sec__header">
             <h2 class="sec__header-ttl">
@@ -470,14 +539,15 @@ onUnmounted(() => {
           </div>
         </div>
       </section>
-      <section class="sec sec4">
+      <section class="sec sec4" ref="sec4">
         <div class="sec__inner u_mx">
           <NuxtLink :to="`/company/history`" class="sec__container md:tw-flex tw-flex-row-reverse">
             <div class="image">
-              <img src="@/assets/images/page/img_company_sec4_1.jpg" width="498" alt="">
+              <span class="bgttl"><span class="txt"></span></span>
+              <div class="wrap"><img src="@/assets/images/page/img_company_sec4_1.jpg" width="498" alt=""></div>
             </div>
             <div class="txtContainer md:tw-flex md:tw-flex-col">
-              <h2 class="txtContainer-ttl tw-font-semibold tw-text-2xl">SPグループの歴史</h2>
+              <h2 class="txtContainer-ttl tw-font-semibold tw-text-2xl max-md:tw-mt-1">SPグループの歴史</h2>
                 <p class="txtContainer-txt tw-mt-12 md:tw-mt-16 md:tw-flex-1 ">SPグループは、創業から着実に成長を遂げてきました。<br>
 それは、お客様のニーズと信頼に応える足跡でもありました。</p>
               <div class="btnContainer tw-text-right">

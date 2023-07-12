@@ -36,7 +36,7 @@ export default defineComponent({
   data:() => ({
     settings: {
       // autoplay:"3000",
-      transition:"700",
+      transition:700,
       itemsToShow:1,
       snapAlign:'center',
       breakpoints: {

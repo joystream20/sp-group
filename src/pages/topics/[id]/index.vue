@@ -12,6 +12,11 @@ const {data: article} = await useFetch(`/api/postDetail`, {
   params: {slug:id}
 })
 
+useHead({
+  title: `${article.value.title} | SPグループ`,
+  meta:[]
+})
+
 const cats = article.value.category;
 console.log(cats)
 // console.log(article.value.category)
@@ -84,7 +89,7 @@ definePageMeta({
     </div>
 
 
-    <div class="postContainer">
+    <div class="postContainer tw-px-8">
       <div class="postContainer__inner u_mx">
 
         <div class="topContainer">

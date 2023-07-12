@@ -24,6 +24,7 @@ let ttl = ref<string>("")
       <NuxtLink :to="`/company`">
         <div class="comInfoContainer__inner u_mx md:tw-flex md:tw-flex-row-reverse">
           <div class="ttlInfoContainer tw-relative">
+            <div class="image"></div>
             <p class="ttlInfoContainer-ttl tw-absolute">COMPANY<br>INFO</p>
           </div>
           <div class="txtInfoContainer">
@@ -36,6 +37,7 @@ let ttl = ref<string>("")
       <NuxtLink :to="`/about`">
         <div class="comInfoContainer__inner u_mx md:tw-flex md:tw-flex-row-reverse">
           <div class="ttlInfoContainer tw-relative">
+            <div class="image"></div>
             <p class="ttlInfoContainer-ttl tw-absolute">OUR<br>ADVANTAGE</p>
           </div>
           <div class="txtInfoContainer">
@@ -52,21 +54,39 @@ let ttl = ref<string>("")
 .compInfoContainer{
   background: rgb(10,55,110);
 background: linear-gradient(90deg, rgba(10,55,110,1) 0%, rgba(10,55,110,1) 31%, rgba(207,217,230,1) 100%);
-  padding-top:clamp(85px, #{pvv(140, 896)}, 140px);
-  padding-bottom:clamp(20px, #{pvv(50, 1100)}, 30px);
+
+  >a{
+    display: block;
+    padding-top:clamp(85px, #{pvv(140, 896)}, 140px);
+    padding-bottom:clamp(20px, #{pvv(50, 1100)}, 30px);
+    &:hover{
+      opacity:1;
+      .ttlInfoContainer{
+        .image{
+         &:before{
+          transform:scale(1.1);
+         }
+        }
+      }
+    }
+  }
     &.company{
       .ttlInfoContainer{
-        &:before{
+        .image{
+         &:before{
           background:url(../assets/images/page/img_footer_link_1.jpg) no-repeat;
           background-size:cover;
+         }
         }
       }
     }
     &.advantage{
       .ttlInfoContainer{
-        &:before{
-          background:url(../assets/images/page/img_footer_link_2.jpg) no-repeat;
-          background-size:cover;
+        .image{
+          &:before{
+            background:url(../assets/images/page/img_footer_link_2.jpg) no-repeat;
+            background-size:cover;
+          }
         }
       }
     }
@@ -75,11 +95,17 @@ background: linear-gradient(90deg, rgba(10,55,110,1) 0%, rgba(10,55,110,1) 31%, 
   .ttlInfoContainer{
     width: 90%;
     margin-left:10%;
-    &:before{
+    .image{
+      // aspect-ratio: 1 / .4;
+      overflow: hidden;
+      &:before{
       content:"";
       display: block;
       aspect-ratio: 1 / .4;
+      transition:transform .5s;
     }
+    }
+   
     &-ttl{
       top:0;
       left:0;
@@ -114,7 +140,9 @@ background: linear-gradient(90deg, rgba(10,55,110,1) 0%, rgba(10,55,110,1) 31%, 
 
 @media screen and (min-width: 896px) {
   .compInfoContainer{
-    padding-top:85px;
+    >a{
+      padding-top:85px;
+    }
   }
   .ttlInfoContainer{
     width:57%;

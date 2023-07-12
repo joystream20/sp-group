@@ -1,16 +1,46 @@
+<script setup lang="ts">
+import { onMounted } from 'vue';
+import { gsap } from 'gsap';
+
+const info = ref()
+let ctx1;
+onMounted(() => {
+  ctx1 = gsap.context((self) => {
+  const wrap = self.selector('.infoContainer__inner-wrap')
+  const target = self.selector('.infoContainer__inner')
+  // setTimeout(()=>{
+  //   gsap.to(target,{
+  //     scrollTrigger: {
+  //       trigger:target,
+  //       start:''
+  //       markers:true
+  //     }
+  //   })
+  // },500)
+  },info.value)
+  
+
+})
+
+
+
+</script>
+
 <template>
   <footer class="site-footer tw-px-8 md:tw-pt-20 md:tw-pt-32">
     <div class="site-footer__inner u_mx md:tw-flex tw-flex-row-reverse">
-      <div class="infoContainer">
-        <div class="infoContainer__inner">
-            <div>
-              <div>お電話でのお問い合わせ</div>
-              <a href="tel:0357637770" class="tel tw-inline-block">
-                <span class="num u_ff3 tw-flex tw-justify-center tw-items-center tw-text-5xl tw-leading-none tw-tracking-widest"><SvgPhone />03-5763-7770</span>
-              </a>
+      <div class="infoContainer" ref="info">
+        <div class="infoContainer__inner-wrap">
+          <div class="infoContainer__inner">
+              <div>
+                <div>お電話でのお問い合わせ</div>
+                <a href="tel:0357637770" class="tel tw-inline-block">
+                  <span class="num u_ff3 tw-flex tw-justify-center tw-items-center tw-text-5xl tw-leading-none tw-tracking-widest"><SvgPhone />03-5763-7770</span>
+                </a>
+              </div>
+              <div><a class="mail tw-inline-block"><span class="txt tw-flex tw-justify-center tw-items-center tw-text-xl"><SvgMail />メールでのお問い合わせ</span></a></div>
             </div>
-            <div><a class="mail tw-inline-block"><span class="txt tw-flex tw-justify-center tw-items-center tw-text-xl"><SvgMail />メールでのお問い合わせ</span></a></div>
-          </div>
+        </div>
       </div>
       <div class="fnavContainer md:tw-flex-1 max-md:tw-flex-wrap tw-flex tw-justify-between tw-pt-20 md:tw-pt-16 md:tw-pb-8 md:tw-flex-col">
         
@@ -19,7 +49,7 @@
               <li class="fnav-item md:tw-mr-12"><NuxtLink :to="`/`">ホーム</NuxtLink></li>
               <li class="fnav-item md:tw-mr-12"><NuxtLink :to="`/about`">SPグループの強み</NuxtLink></li>
               <li class="fnav-item md:tw-mr-12"><NuxtLink :to="`/company`">企業情報</NuxtLink></li>
-              <li class="fnav-item"><NuxtLink :to="`/casestudies`">事例</NuxtLink></li>
+              <li class="fnav-item"><NuxtLink :to="`/#casestudies`">事例</NuxtLink></li>
             </ul>
           </div>
           <div class="tw-w-2/4 md:tw-w-full fnav-wrap">

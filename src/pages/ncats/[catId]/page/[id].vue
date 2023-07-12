@@ -15,6 +15,11 @@ const {data: currentCat} = await useFetch(`/api/catDetail`, {
   params: {catId: catId}
 })
 
+useHead({
+  title: `${currentCat.value.name} | SPグループ`,
+  meta:[]
+})
+
 const emit = defineEmits(['p_type'])
 
 onMounted(() => {
@@ -49,7 +54,7 @@ onMounted(() => {
         <p class="ttlContainer-txt">ニュース</p>
       </div>
     </header>
-    <article class="postContainer">
+    <article class="postContainer tw-px-8">
       <div class="postContainer__inner u_mx">
         <News :page="page" :catId="catId" :belongsTo="belongsTo" :path="`/ncats/${catId}/page`" />
         <LinkAreaNews />

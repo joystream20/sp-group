@@ -19,14 +19,28 @@ const {data: topics} = await useFetch('/api/postList', {params: topicQueries})
 
 const emit = defineEmits(['p_type','t_scroll'])
 
+const { first } = firstTime();
+
+
+
 
 const main = ref()
-let tl;
+const topImage = ref()
+let tl1;
+let tl2;
+let tl3;
+let tl4,tl5;
 let ctx;
+let ctxImage;
+
 
 
 onMounted(() => {
   emit('p_type', 'top')
+
+  window.addEventListener("DOMContentLoaded", async () => {
+    console.log('window loaded')
+  });
 
   nextTick(() => {
     const video = main.value.querySelector('.videoContainer video')
@@ -47,61 +61,110 @@ onMounted(() => {
         console.log(err)
       }
     }
+
+    console.log("first=",first.value)
+    if(!first.value){
+      first.value = true
+    }
+
   })
 
+  ctxImage = gsap.context((self) => {
+    const tx1 = self.selector('.imageContainer-text .tx1 img')
+    const tx2 = self.selector('.imageContainer-text .tx2 img')
+    const tx3 = self.selector('.imageContainer-text .tx3 img')
+
+    const sq1 = self.selector('.imageContainer .sq1 img')
+    const sq2 = self.selector('.imageContainer .sq2 img')
+    const sq3 = self.selector('.imageContainer .sq3 img')
+    const sq4 = self.selector('.imageContainer .sq4 img')
+    
+    tl1=gsap.timeline()
+    tl1.fromTo(tx1,{opacity:0,y:30},{opacity:1,y:0,duration:.7,delay:1})
+    tl1.fromTo(tx2,{opacity:0,y:30},{opacity:1,y:0,duration:.7}, "-=.4")
+    tl1.fromTo(tx3,{opacity:0,y:30},{opacity:1,y:0,duration:.7}, "-=.4")
+
+    tl2=gsap.timeline()
+    tl2.fromTo(sq1, {opacity:0,y:30},{opacity:1,y:0,duration:.7,delay:1.2})
+    tl2.fromTo(sq2, {opacity:0,y:30},{opacity:1,y:0,duration:.7}, "-=.3")
+    tl2.fromTo(sq3, {opacity:0,y:30},{opacity:1,y:0,duration:.7}, "-=.3")
+    tl2.fromTo(sq4, {opacity:0,y:30},{opacity:1,y:0,duration:.7}, "-=.3")
+    
+  },topImage.value)
+
   ctx = gsap.context((self) => {
-    const imageContainer = self.selector('.imageContainer')
-    const heroImages = self.selector('.imageContainer-image')
-    const image1 = heroImages[3]
-    const image2 = heroImages[2]
 
     const sec1_ttl = self.selector('#sec1-ttl')
+    const sec1_tx1 = self.selector('#sec1-ttl .tx1 span')
+    const sec1_tx2 = self.selector('#sec1-ttl .tx2 span')
+    const sec1_tx3 = self.selector('#sec1-ttl .tx3 img')
+
+    const spList1 = self.selector('.spList-item.item1')
+    const spList2 = self.selector('.spList-item.item2')
+    const spList3 = self.selector('.spList-item.item3')
+    const spList4 = self.selector('.spList-item.item4')
+    const spTitle = self.selector('.sec1 .spTitle')
+    const spList = self.selector('.spList')
+    const spListitem = gsap.utils.toArray(self.selector('.spList-item'))
+
     const sec2_ttl = self.selector('#sec2-ttl')
+    const sec2_tx1 = self.selector('#sec2-ttl .tx1 span')
+    const sec2_tx2 = self.selector('#sec2-ttl .tx2 span')
 
-    nextTick(() => {
-      console.log('index gsap nextTick')
-      gsap.set(imageContainer, {
-        opacity:0
-      })
-      gsap.set(sec1_ttl, {
-        opacity:0,
-        y:50
-      })
-      gsap.set(sec2_ttl, {
-        opacity:0,
-        y:50
-      })
-      // gsap.set(image1, {
-      //   opacity:0,
-      //   // y:-100
-      // })
-      // gsap.set(image2, {
-      //   opacity:0,
-      //   // x:500
-      // })
+    const sec_news_ttl = self.selector('.sec_nt.news .bg span')
+    const sec_topic_ttl = self.selector('.sec_nt.topics .bg span')
+
+    //nextTick(() => {
+      // console.log('index gsap nextTick')
+      gsap.set(sec1_tx1, { y:'100%' })
+      gsap.set(sec1_tx2, { y:'100%' })
+      gsap.set(sec1_tx3, { x:100, opacity:0 })
+
+      gsap.set(spTitle,{opacity:0 })
+
+      // spListitem.forEach(_el => { gsap.set(_el, {opacity:0 }) })
+
+      gsap.set(spList1,{opacity:0,y:'20%'})
+      gsap.set(spList2,{opacity:0,x:'-20%'})
+      gsap.set(spList3,{opacity:0,y:'-20%'})
+      gsap.set(spList4,{opacity:0,x:'20%'})
+
+      gsap.set(sec2_tx1, { y:'100%' })
+      gsap.set(sec2_tx2, { y:'100%' })
+
+      gsap.set(sec_news_ttl, {x:'-100%'})
+      gsap.set(sec_topic_ttl, {x:'-100%'})
 
 
-      setTimeout( () => {
-
-      
-      gsap.to(imageContainer, {
-        opacity:1,
-        duration:3,
-        delay:1,
-        
-      })
-      gsap.to(sec1_ttl, {
-        opacity:1,
+    setTimeout( () => {
+      tl5=gsap.timeline({paused: true})
+      tl5.to(sec2_tx1, {
         y:0,
-        duration:1,
-        // delay:2,
+        duration:.7,
+        scrollTrigger: {
+          trigger:sec2_ttl,
+          start: 'center bottom-=20%',
+          onEnter: () => {
+            tl5.play();
+          }
+        }
+      })
+      tl5.to(sec2_tx2, {
+        y:0,
+        duration:.7,
+        delay:.3
+      })
+
+      tl4=gsap.timeline({paused: true})
+      tl4.to(sec1_tx1, {
+        y:0, duration:.7,
         scrollTrigger: {
           trigger:sec1_ttl,
-          start:'center center',
+          start:'center bottom-=20%',
           // markers: true,
-          onEnter: () => {
-            // console.log('on enter scroll trigger')
+          onEnter: (e) => {
             emit('t_scroll', 'on')
+            tl4.play();
           },
           onLeaveBack: () => {
             // console.log('on leave scroll trigger')
@@ -109,46 +172,71 @@ onMounted(() => {
           }
         }
       })
-      gsap.to(sec2_ttl, {
-        opacity:1,
+
+      tl4.to(sec1_tx2, {
         y:0,
-        duration:1,
+        duration:.7,
+        delay:.3
+      })
+      tl4.to(sec1_tx3, {
+        x:0,
+        opacity:1,
+        duration:.5,
+      },'-=.7')
+
+
+      tl3=gsap.timeline({paused: true})
+      gsap.to(spTitle, {
+        opacity:1,
+        duration:.7,
+        scrollTrigger: {
+          trigger: spTitle,
+          start: 'center bottom-=20%',
+          onEnter: (e) => {
+            setTimeout(()=>{
+              tl3.play()
+            },500)
+          }
+        }
+      })
+
+      spListitem.forEach(
+      _el => {
+        tl3.to(_el, {
+          opacity:1,
+          x:0,
+          y:0,
+          duration:.7,
+        },'-=.3')
+      }
+      
+     )
+
+
+      gsap.to(sec_news_ttl, {
+        x:0,
+        duration:.7,
         // delay:2,
         scrollTrigger: {
-          trigger:sec2_ttl,
-          start:'center center',
+          trigger:sec_news_ttl,
+          start:'center bottom',
+          // markers: true
+        }
+      })
+      gsap.to(sec_topic_ttl, {
+        x:0,
+        duration:.7,
+        // delay:2,
+        scrollTrigger: {
+          trigger:sec_topic_ttl,
+          start:'center bottom',
           // markers: true
         }
       })
 
     }, 1000)
 
-      // gsap
-      // // .timeline()
-      // .to(image1, {
-      //   opacity: 1,
-      //   // y:30,
-      //   duration: 2,
-      //   delay:1.0,
-      //   scrollTrigger: {
-      //     trigger: image1,
-      //     start: 'center center',
-      //     markers: true
-      //   }
-      // })
-      // gsap.to(image2, {
-      //   opacity:1,
-      //   // x: 0,
-      //   duration: 2,
-      //   delay:1.0,
-      //   scrollTrigger: {
-      //     trigger: image1,
-      //     start: 'center center',
-      //     markers: true
-      //   }
-      // })
-
-    })
+    //})//nextTick
 
   }, main.value)
 
@@ -159,6 +247,8 @@ onUnmounted(() => {
   // console.log(ctx)
   emit('t_scroll', 'off')
   ctx.revert(); // <- Easy Cleanup!
+  ctxImage.revert();
+
 })
 
 const breakPoint = <string>"896"
@@ -170,40 +260,48 @@ const objClass : object = reactive({
 </script>
 
 <template>
-  <main class="site-main top" ref="main">
+  <main class="site-main top">
     <div class="heroContainer tw-relative tw-w-full tw-aspect-video" :class="objClass">
       <div class="videoContainer">
       <video id="video" src="@/assets/movie/DJI_0015.mp4" muted playsinline autoplay></video>
    </div>
-      <div class="imageContainer tw-absolute tw-inset-0 tw-w-full">
-        <div class="imageContainer-image tw-absolute">
+      <div class="imageContainer tw-absolute tw-inset-0 tw-w-full" ref="topImage">
+        <div class="imageContainer-image tw-absolute sq1">
           <img src="@/assets/images/top/img_h_1.jpg" alt="">
         </div><!-- -->
-        <div class="imageContainer-image tw-absolute">
+        <div class="imageContainer-image tw-absolute sq2">
           <img src="@/assets/images/top/img_h_2.jpg" alt="">
         </div><!-- -->
-        <div class="imageContainer-image tw-absolute">
+        <div class="imageContainer-image tw-absolute sq3">
           <img src="@/assets/images/top/img_h_3.jpg" alt="">
         </div><!-- -->
-        <div class="imageContainer-image tw-absolute">
+        <div class="imageContainer-image tw-absolute sq4">
           <img src="@/assets/images/top/img_h_4.jpg" alt="">
         </div><!-- -->
         <div class="imageContainer-text tw-absolute">
-          <div class="image"><img src="@/assets/images/top/img_hero_text01.png" alt="SPECIAL"></div>
-          <div class="image"><img src="@/assets/images/top/img_hero_text02.png" alt="PARTNER"></div>
-          <div class="image"><img src="@/assets/images/top/img_hero_text03.png" alt="今も、この先もずっと。"></div>
+          <div class="image tx1"><img src="@/assets/images/top/img_hero_text01.png" alt="SPECIAL"></div>
+          <div class="image tx2"><img src="@/assets/images/top/img_hero_text02.png" alt="PARTNER"></div>
+          <div class="image tx3"><img src="@/assets/images/top/img_hero_text03.png" alt="今も、この先もずっと。"></div>
         </div>
       </div>
     </div>
    
     <div class="site-main__inner">
-      <article class="secContainer">
-        <section class="sec sec1 tw-px-8">
+      <article class="secContainer" ref="main">
+        <section class="sec sec1 tw-px-8 ">
           <div class="sec__inner u_mx">
             <header class="sec__header tw-text-white">
-              <h2 id="sec1-ttl" class="sec__header-ttl">
-                <span class="txt tw-block">OUR</span>
-                <span class="txt tw-block">ADVANTAGE</span>
+              <h2 id="sec1-ttl" class="sec__header-ttl tw-relative animTxt">
+                <span class="txt tw-block tx1 anm"><span>OUR</span></span>
+                <span class="txt tw-block tx2 anm"><span>ADVANTAGE</span></span>
+                <span class="txt tw-block anm tx3 anm_x tw-absolute txt-image">
+                  <picture>
+                  <source media='(min-width:897px)' srcset='@/assets/images/top/img_sec1_ttl_txt.png'>
+                  <source media='(max-width:896px)' srcset='@/assets/images/top/img_sec1_ttl_txt_sp.png'>
+                  <img src="@/assets/images/top/img_sec1_ttl_txt_sp.png" width="720px" alt="お客様と共に夢を現実にしていくSPグループ">
+                  </picture>
+                  
+                </span>
               </h2>
               <p class="sec__header-txt tw-font-semibold tw-text-4xl">SPグループの強み</p>
             </header>
@@ -221,23 +319,31 @@ const objClass : object = reactive({
                 </div>
               </div>
               <div class="imageContainer tw-relative tw-max-w tw-mt-16 md:tw-mt-12">
-                <h3 class="spTitle">トータル<br>サポート</h3>
+                <h3 class="spTitle"><div class="inner">トータル<br>サポート</div></h3>
                 <ul class="spList tw-absolute tw-top-0 tw-right-0 tw-bottom-0 tw-left-0">
-                  <li class="spList-item">
-                    <h4 class="sp-ttl">ソリューション</h4>
-                    <p class="sp-txt">販売提案営業<br>書類作成代行<br>設置代行</p>
+                  <li class="spList-item item1">
+                    <div class="inner">
+                      <h4 class="sp-ttl">ソリューション</h4>
+                      <p class="sp-txt">販売提案営業<br>書類作成代行<br>設置代行</p>
+                    </div>
                   </li>
-                  <li class="spList-item">
-                    <h4 class="sp-ttl">ロジスティック</h4>
-                    <p class="sp-txt">システム管理<br>（SP.Ⅱシステム）<br>保管管理業務<br>洗浄・メンテナンス</p>
+                  <li class="spList-item item2">
+                    <div class="inner">
+                      <h4 class="sp-ttl">ロジスティック</h4>
+                      <p class="sp-txt">システム管理<br>（SP.Ⅱシステム）<br>保管管理業務<br>洗浄・メンテナンス</p>
+                    </div>
                   </li>
-                  <li class="spList-item">
-                    <h4 class="sp-ttl">トランスポート</h4>
-                    <p class="sp-txt">精密機器配送</p>
+                  <li class="spList-item item3">
+                    <div class="inner">
+                      <h4 class="sp-ttl">トランスポート</h4>
+                      <p class="sp-txt">精密機器配送</p>
+                    </div>
                   </li>
-                  <li class="spList-item">
-                    <h4 class="sp-ttl">キャリア</h4>
-                    <p class="sp-txt">人材紹介<br>人材派遣</p>
+                  <li class="spList-item item4">
+                    <div class="inner">
+                      <h4 class="sp-ttl">キャリア</h4>
+                      <p class="sp-txt">人材紹介<br>人材派遣</p>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -289,10 +395,10 @@ const objClass : object = reactive({
         <section id="casestudies" class="sec sec3 tw-px-8 tw-mt-20 md:tw-mt-28">
           <div class="sec__inner mx">
             <header class="sec__header ">
-              <h2 id="sec2-ttl" class="sec__header-ttl">
+              <h2 id="sec2-ttl" class="sec__header-ttl animTxt">
                 <!-- <img src="@/assets/images/top/img_sec_ttl03.png"  alt="case studies" width="916"> -->
-                <span class="txt tw-block">CASE</span>
-                <span class="txt tw-block">STUDIES</span>
+                <span class="txt tw-block anm tx1"><span>CASE</span></span>
+                <span class="txt tw-block anm tx2"><span>STUDIES</span></span>
               </h2>
               <p class="sec__header-txt tw-text-4xl tw-font-semibold">事例</p>
               <p class="txt tw-text-sm md:tw-text-base tw-mt-12 md:tw-mt-28">お客さまにより業態や規模、環境もさまざまです。<br>サポートさせていただいている事例の一部をご紹介いたします。</p>
@@ -346,6 +452,7 @@ const objClass : object = reactive({
         <div id="news" class="sec sec4 tw-px-8 tw-mb-20 md:tw-mb-56 angle">
           <div class="sec__inner mx md:tw-flex ">
             <section class="sec_nt news md:tw-pb-12 md:tw-w-6/12 tw-flex tw-flex-col tw-px-8">
+              <span class="bg"><span></span></span>
               <div class="sec_nt__inner">
                 <header class="sec_nt__header">
                   <h2 class="sec_nt__header-ttl tw-text-xl md:tw-text-4xl">ニュース</h2>
@@ -359,6 +466,7 @@ const objClass : object = reactive({
               </div>
             </section>
             <section class="sec_nt topics max-md:tw-mt-36 md:tw-pb-12 md:tw-w-6/12 tw-flex tw-flex-col tw-px-8">
+            <span class="bg"><span></span></span>
               <div class="sec_nt__inner">
                 <header class="sec_nt__header">
                   <h2 class="sec_nt__header-ttl tw-text-xl md:tw-text-4xl">トピックス</h2>

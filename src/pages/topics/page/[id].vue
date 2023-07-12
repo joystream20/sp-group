@@ -2,6 +2,11 @@
 import { MicroCMSQueries } from 'microcms-js-sdk';
 import { onMounted } from 'vue';
 
+useHead({
+  title: 'トピックス | SPグループ',
+  meta:[]
+})
+
 const emit = defineEmits(['p_type'])
 
 const ttl_view = ref<String>()
@@ -38,7 +43,7 @@ const type:string = "topics"
         <p class="ttlContainer-txt">トピックス</p>
       </div>
     </header>
-    <article class="postContainer">
+    <article class="postContainer tw-px-8">
       <div class="postContainer__inner u_mx">
         <Topic :page="page" :belongsTo="type" :path="`/topics/page`" />
         <LinkAreaNews />

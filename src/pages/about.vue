@@ -1,13 +1,22 @@
 <script setup lang="ts">
 import { onMounted, nextTick } from 'vue';
+import gsap from 'gsap';
+
+useHead({
+  title: 'SPグループの強み | SPグループ',
+  meta:[]
+})
 
 const emit = defineEmits(['p_type'])
 
 const type:string = "company"
 
 const elm = ref()
+const imgs = ref()
 
 const ttl_view = ref<String>('')
+
+let ctx1,ctx2,tl1;
 
 onMounted(() => {
   emit('p_type', 'about')
@@ -33,12 +42,103 @@ onMounted(() => {
         // _img.classList.add('u_pc')
       }
     )
+
+    // const ttls = elm.value.querySelectorAll('.box__header-ttl')
+    // ttls.forEach(
+    //   _ttl => {
+    //     console.log(_ttl)
+    //     const _span = document.createElement('span')
+    //     _span.classList.add('bgttl')
+    //     _ttl.appendChild(_span)
+    //   }
+    // )
     
     setTimeout(() => {
       ttl_view.value = 'on'
     },1500)
+
+
+    //------------------------
+    ctx1 = gsap.context((self) => {
+
+      const ttls_bg = self.selector('.box__header-ttl .bgttl')
+      ttls_bg.forEach(
+          _ttl => {
+            gsap.set(_ttl, {y:'100%'})
+          }
+        )
+
+        setTimeout(() => {
+      //nextTick(() => {
+        ttls_bg.forEach(
+          _bg => {
+            gsap.to(_bg, {
+              y:0,
+              duration: .7,
+              scrollTrigger: {
+                trigger: _bg,
+                start: 'center bottom-=10%',
+              }
+            })
+          }
+        )
+      //})
+        },1000)
+
+    },elm.value)
+
+    ctx2 = gsap.context((self) => {
+      const spTitle = self.selector('.spTitle')
+      const spList1 = self.selector('.spList-item.item1')
+      const spList2 = self.selector('.spList-item.item2')
+      const spList3 = self.selector('.spList-item.item3')
+      const spList4 = self.selector('.spList-item.item4')
+      const spListitems = gsap.utils.toArray(self.selector('.spList-item'))
+      
+      gsap.set(spTitle,{opacity:0})
+      gsap.set(spList1,{opacity:0,y:'20%'})
+      gsap.set(spList2,{opacity:0,x:'-20%'})
+      gsap.set(spList3,{opacity:0,y:'-20%'})
+      gsap.set(spList4,{opacity:0,x:'20%'})
+
+      setTimeout(() => {
+        tl1=gsap.timeline({paused: true})
+        gsap.to(spTitle, {
+          opacity:1,
+          duration:.7,
+          scrollTrigger: {
+            trigger: spTitle,
+            start: 'center bottom-=20%',
+            onEnter: (e) => {
+              setTimeout(() => {
+                tl1.play()
+              },500)
+            }
+          }
+        })
+
+        spListitems.forEach(
+          _el => {
+            tl1.to(_el, {
+              opacity:1,
+              x:0,
+              y:0,
+              duration:.7,
+            }, '-=.2')
+          }
+        )
+      },1000)
+    },imgs.value)
+
   })
   
+})
+
+onUnmounted(() => {
+  console.log('clean')
+  ctx1.revert();
+  ctx2.revert();
+
 })
 </script>
 
@@ -64,7 +164,7 @@ onMounted(() => {
       トータルサポート体制がここにはあります。</p>
     </header>
     <article class="secContainer">
-      <section class="sec sec1 angle u_px">
+      <section class="sec sec1 angle u_px" ref="imgs">
         <div class="sec__inner u_mx">
           <div class="imageContainer tw-relative tw-max-w">
                 <h3 class="spTitle">
@@ -75,7 +175,7 @@ onMounted(() => {
                   </NuxtLink>
                 </h3>
                 <ul class="spList tw-absolute tw-top-0 tw-right-0 tw-bottom-0 tw-left-0">
-                  <li class="spList-item">
+                  <li class="spList-item item1">
                     <h4 class="sp-ttl">ソリューション</h4>
                     <p class="sp-txt">販売提案営業<br>書類作成代行<br>設置代行</p>
                     <div class="l_image">
@@ -89,7 +189,7 @@ onMounted(() => {
                         </NuxtLink>
                     </div>
                   </li>
-                  <li class="spList-item">
+                  <li class="spList-item item2">
                     <h4 class="sp-ttl">ロジスティック</h4>
                     <p class="sp-txt">システム管理<br>（SP.Ⅱシステム）<br>保管管理業務<br>洗浄・メンテナンス</p>
                     <div class="l_image">
@@ -99,7 +199,7 @@ onMounted(() => {
                         </NuxtLink>
                     </div>
                   </li>
-                  <li class="spList-item">
+                  <li class="spList-item item3">
                     <h4 class="sp-ttl">トランスポート</h4>
                     <p class="sp-txt">精密機器配送</p>
                     <div class="l_image">
@@ -109,7 +209,7 @@ onMounted(() => {
                         </NuxtLink>
                     </div>
                   </li>
-                  <li class="spList-item">
+                  <li class="spList-item item4">
                     <h4 class="sp-ttl">キャリア</h4>
                     <p class="sp-txt">人材紹介<br>人材派遣</p>
                     <div class="l_image">
@@ -128,7 +228,7 @@ onMounted(() => {
           <article class="box md:tw-flex">
             <div class="txtContainer">
               <header class="box__header">
-                <h3 class="box__header-ttl"><span class="txt">ソリューション</span></h3>
+                <h3 class="box__header-ttl"><span class="txt">ソリューション</span><span class="bgttl"></span></h3>
               </header>
               <p class="box-txt tw-mt-12">新台がわずか一週間で中古台と位置づけられるなど、その市場は刻一刻と変化しています。まさに遊技機の導入や転売は、ホールの経営を左右する大きなポイントです。<br>
               SPグループでは、年間約80,000台もの遊技機の流通を手がけています。その経験から、さまざまなノウハウを蓄積。<br>
@@ -148,7 +248,7 @@ onMounted(() => {
           <article class="box md:tw-flex">
             <div class="txtContainer">
               <header class="box__header">
-                <h3 class="box__header-ttl"><span class="txt">ロジスティック</span></h3>
+                <h3 class="box__header-ttl"><span class="txt">ロジスティック</span><span class="bgttl"></span></h3>
               </header>
               <p class="box-txt tw-mt-12">SPグループは、床面積約2500㎡の川崎倉庫（保管可能台数約30,000台）と約1200㎡の埼玉倉庫（保管可能台数約4,000台）を有しています。セコムカメラによる24時間のセキュリティ体制が、安心の保管台管理を実現。独自の在庫管理システムとプロフェッショナルな倉庫作業でミスなく、確実な流通へ展開することが可能です。<br>
               また、ロジスティクとの連動によって、臨機応変にスピーディな納品や転売を行うことができます。</p>
@@ -166,7 +266,7 @@ onMounted(() => {
           <article class="box md:tw-flex">
             <div class="txtContainer">
               <header class="box__header">
-                <h3 class="box__header-ttl"><span class="txt">トランスポート</span></h3>
+                <h3 class="box__header-ttl"><span class="txt">トランスポート</span><span class="bgttl"></span></h3>
               </header>
               <p class="box-txt tw-mt-12">遊運協に加盟し、プロのスタッフによる遊技機および関連部品を全国に配送。<br>
               たとえば、メーカーごとに新台の納品を行うことは、輸送コストに大きな無駄が生まれてしまいます。SPグループでは、複数のメーカーの遊技機を同時に納品。輸送コストが大幅に削減できます。また、搬入時の煩雑な納品手続きも一度で済むため、これまでにないスムーズな納品が実現します。</p>
@@ -184,7 +284,7 @@ onMounted(() => {
           <article class="box md:tw-flex">
             <div class="txtContainer">
               <header class="box__header">
-                <h3 class="box__header-ttl"><span class="txt">キャリア</span></h3>
+                <h3 class="box__header-ttl"><span class="txt">キャリア</span><span class="bgttl"></span></h3>
               </header>
               <p class="box-txt tw-mt-12">SPグループはパチンコ業界の様々な分野でお取引させていただいてます。<br>
               メーカー様、ホール様、販社様、運送会社様、その繋がりやコミュニティーは他の人材紹介会社には無い独自の強み(交渉力、提案力)だと自負しております。<br>

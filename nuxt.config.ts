@@ -24,6 +24,7 @@ export default defineNuxtConfig({
   app: {
     head:{
       link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         {
           rel: "stylesheet",
           href: 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@1,700&family=Yantramanav:wght@900&display=swap',

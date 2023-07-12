@@ -1,10 +1,20 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
+import gsap from 'gsap';
+
+useHead({
+  title: 'SPグループの歴史 | SPグループ',
+  meta:[]
+})
+
 const type:string = "company"
 const info_type:string = "advantage"
 const emit = defineEmits(['p_type'])
 
 const ttl_view = ref<String>('')
+
+const list = ref()
+let ctx1;
 
 onMounted(() => {
   emit('p_type', 'company')
@@ -14,6 +24,37 @@ onMounted(() => {
       ttl_view.value = 'on'
     },1500)
   })
+
+  ctx1 = gsap.context((self) => {
+    const ttls = self.selector('.hisList-block .txt')
+
+    ttls.forEach(
+      _ttl => {
+        gsap.set(_ttl, {y:'100%'})
+      }
+    )
+
+    setTimeout(() => {
+      ttls.forEach(
+        _ttl => {
+          gsap.to(_ttl, {
+            y:0,
+            duration:.7,
+            scrollTrigger: {
+              trigger: _ttl,
+              start: 'center bottom-=10%'
+            }
+          })
+        }
+      )
+    },1000)
+  },list.value)
+})
+
+onUnmounted(() => {
+  console.log('clean')
+  ctx1.revert()
+
 })
 </script>
 <template>
@@ -44,13 +85,12 @@ onMounted(() => {
           それは、お客様のニーズと信頼に応える足跡でもありました。</p>
         </div>
         <div class="sec__inner u_mx angle_b_b">
-          <dl class="hisList u_mx1000">
+          <dl class="hisList u_mx1000" ref="list">
            <div class="hisList-block">
-            <dt><span class="num">2007</span>年</dt>
+            <dt><span class="txt"><span class="num">2007</span>年</span></dt>
             <dd>
               <h3 class="hisList-ttl tw-font-semibold tw-text-3xl">（株）セブンピース創業</h3>
               <p class="hisList-txt">遵技機の中古売買をメインの業務として、神奈川県藤沢を拠点に7名によるスタートでした。<br>
-              現代表の独立に、それまでお付き合いのあったお客様が顧客となって、支えていただいたという経緯がありました。<br>
               その顧客様のスペシャルパートナーであるために…これが、SPグループの始まりだったのです。</p>
               <div class="image">
                 <img src="@/assets/images/page/img_group_1.png" alt="SEVEN PEACE" width="221">
@@ -61,14 +101,14 @@ onMounted(() => {
             </dd>
            </div>
            <div class="hisList-block">
-            <dt><span class="num">2008</span>年</dt>
+            <dt><span class="txt"><span class="num">2008</span>年</span></dt>
             <dd>
               <h3 class="hisList-ttl tw-font-semibold tw-text-3xl">遊技機管埋システム クリアセブン開発</h3>
               <p class="hisList-txt">中古台の売買を行う際の遊技機台の発送は、他社の専門業者に依頼をしていました。 しかし、お客様のニーズに迅速にお応えするためにも、同時に、さらなる事業の発展を目指すためにも、倉庫を自社で保有することが不可欠と考え神奈川県川崎に倉庫を開設しました。</p>
             </dd>
            </div>
            <div class="hisList-block">
-            <dt><span class="num">2009</span>年</dt>
+            <dt><span class="txt"><span class="num">2009</span>年</span></dt>
             <dd>
               <h3 class="hisList-ttl tw-font-semibold tw-text-3xl">M&amp;Aにより（株）ココプランニングが参入</h3>
               <p class="hisList-txt">遊技機のチェーン店移動、転売や撒去には、さまざまな書類が必要です。<br>
@@ -79,7 +119,7 @@ onMounted(() => {
             </dd>
            </div>
            <div class="hisList-block">
-            <dt><span class="num">2010</span>年</dt>
+            <dt><span class="txt"><span class="num">2010</span>年</span></dt>
             <dd>
               <h3 class="hisList-ttl tw-font-semibold tw-text-3xl">埼玉営業所設立</h3>
               <p class="hisList-txt">埼玉・東京を中心に展開されているホール様の運営を円滑に行えるよう、 また、運送会社との連携も考え、埼玉に営業所を設立。保管管理はもちろん、中古機の販売もスムーズに行えるようになりました。ホール～連送～倉庫の導線を整理する事で経費削減にも実現でき、大変喜ばれました。</p>
@@ -91,7 +131,7 @@ onMounted(() => {
             </dd>
            </div>
            <div class="hisList-block">
-            <dt><span class="num">2011</span>年</dt>
+            <dt><span class="txt"><span class="num">2011</span>年</span></dt>
             <dd>
               <h3 class="hisList-ttl tw-font-semibold tw-text-3xl">東日本遊技機商業協同組合加盟</h3>
               <p class="hisList-txt">スロットだけではなく、バチンコの書類も出来る事がお客様のご要望にもっとお答えできるという想いから、東日本遊技機商業協同組合にココプランニングが加盟しました。これを機に、遊技機全体の強化を図り、いつでも瞬時に対応できるようになり、ホール様へ中古機を販売するというサービスも増えました。</p>
@@ -103,42 +143,33 @@ onMounted(() => {
             </dd>
            </div>
            <div class="hisList-block">
-            <dt><span class="num">2012</span>年</dt>
+            <dt><span class="txt"><span class="num">2012</span>年</span></dt>
             <dd>
               <h3 class="hisList-ttl tw-font-semibold tw-text-3xl">遊技機運送事業協同組合加盟</h3>
               <p class="hisList-txt">お客様の大切な遊技機を扱う以上、遊技機運送事業で関わる不正行為及び遊技機の不法廃棄等を徘除し、安心してお任せ頂けるよう同組合に加盟いたしました。今後、更なる事業拡大には、まずは信頼と安心が不可欠だと考えての事でした。</p>
             </dd>
            </div>
            <div class="hisList-block">
-            <dt><span class="num">2014</span>年</dt>
+            <dt><span class="txt"><span class="num">2014</span>年</span></dt>
             <dd>
               <h3 class="hisList-ttl tw-font-semibold tw-text-3xl">日本遊技関連事業協会に加盟</h3>
-              <p class="hisList-txt">ホール、遊技機メーカー、販売商社、設備機器メーカー、最品卸、その他遊技業に関連した企業が参加する、唯一の業界横断的組織に加盟しました。<br>
+              <p class="hisList-txt">ホール、遊技機メーカー、販売商社、設備機器メーカー、景品卸、その他遊技業に関連した企業が参加する、唯一の業界横断的組織に加盟しました。<br>
               新時代に相応しいパチンコ・パチスロ産業の基盤造りにSPグループも一役買えるよう、積極的に支援しています。</p>
             </dd>
            </div>
            <div class="hisList-block">
-            <dt><span class="num">2016</span>年</dt>
+            <dt><span class="txt"><span class="num">2016</span>年</span></dt>
             <dd>
               <h3 class="hisList-ttl tw-font-semibold tw-text-3xl">本社移転</h3>
-              <p class="hisList-txt">リニア開業により、東京の玄園口が品川になることを見据え移転することになりました。<br>
+              <p class="hisList-txt">リニア開業により、東京の玄関口が品川になることを見据え移転することになりました。<br>
               また、複数ヵ所に分かれていたグループ会社の本社機能を集約させることにより、グループ全体の業務強化を行い、更なる効率化を図ってまいります。</p>
             </dd>
            </div>
            <div class="hisList-block">
-            <dt><span class="num">2022</span>年</dt>
+            <dt><span class="txt"><span class="num">2023</span>年</span></dt>
             <dd>
-              <h3 class="hisList-ttl tw-font-semibold tw-text-3xl">本社移転</h3>
-              <p class="hisList-txt">リニア開業により、東京の玄園口が品川になることを見据え移転することになりました。<br>
-              また、複数ヵ所に分かれていたグループ会社の本社機能を集約させることにより、グループ全体の業務強化を行い、更なる効率化を図ってまいります。</p>
-            </dd>
-           </div>
-           <div class="hisList-block">
-            <dt><span class="num">2023</span>年</dt>
-            <dd>
-              <h3 class="hisList-ttl tw-font-semibold tw-text-3xl">本社移転</h3>
-              <p class="hisList-txt">リニア開業により、東京の玄園口が品川になることを見据え移転することになりました。<br>
-              また、複数ヵ所に分かれていたグループ会社の本社機能を集約させることにより、グループ全体の業務強化を行い、更なる効率化を図ってまいります。</p>
+              <h3 class="hisList-ttl tw-font-semibold tw-text-3xl">SPキャリアが始動</h3>
+              <p class="hisList-txt">現代の働き方にあわせた個性、強みを活かした「自由な働き方」などお客様のスキルや経験に合わせてたご提案をさせて頂くキャリアサービスを開始しました。</p>
             </dd>
            </div>
           </dl>

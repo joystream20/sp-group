@@ -1,12 +1,54 @@
 <script setup lang="ts">
+import { onMounted } from 'vue';
+import gsap from 'gsap';
 
+const list = ref()
+let ctx1;
+
+onMounted(() => {
+  nextTick(() => {
+    ctx1 = gsap.context((self) => {
+      const items = self.selector('.otherList-item')
+      items.forEach(
+        _item => {
+          gsap.set(_item, {opacity: 0})
+        }
+      )
+      
+      setTimeout(() => {
+        let cnt = 1
+        items.forEach(
+          _item => {
+            gsap.to(_item, {
+              opacity:1,
+              duration: .7,
+              delay:cnt * .2,
+              scrollTrigger: {
+                trigger: _item,
+                start: 'top bottom-=10%'
+              }
+            })
+            cnt++
+          }
+        )
+      },1000)
+
+    },list.value)
+  })
+})
+
+onUnmounted(() => {
+  console.log('clean')
+  ctx1.revert();
+
+})
 </script>
 
 <template>
   <div class="u_px">
     <div class="otherContainer u_mx1000">
           <p class="other-ttl tw-font-semibold titleLine">その他の事業</p>
-          <ul class="otherList tw-flex tw-mt-20">
+          <ul class="otherList tw-flex tw-mt-20" ref="list">
             <li class="otherList-item">
               <NuxtLink :to="`/solution`">
                 <div class="image">

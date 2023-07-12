@@ -2,6 +2,11 @@
 import { onMounted } from 'vue';
 const {data: news} = await useFetch('/api/newsList')
 
+useHead({
+  title: 'ニュース | SPグループ',
+  meta:[]
+})
+
 const emit = defineEmits(['p_type'])
 
 const ttl_view = ref<String>('')
@@ -39,7 +44,7 @@ const type:string = "news"
         <p class="ttlContainer-txt">ニュース</p>
       </div>
     </header>
-    <article class="postContainer">
+    <article class="postContainer tw-px-8">
       <div class="postContainer__inner u_mx">
         <!-- <NewsList :news="news.contents" /> -->
         <News :page="page" :belongsTo="type" :path="`/news/page`" />

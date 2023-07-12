@@ -1,5 +1,11 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
+
+useHead({
+  title: '経営理念 | SPグループ',
+  meta:[]
+})
+
 const type:string = "company"
 const info_type:string = "advantage"
 const emit = defineEmits(['p_type'])

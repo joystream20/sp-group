@@ -2,6 +2,8 @@
 import { onMounted } from 'vue'
 import { MicroCMSQueries } from 'microcms-js-sdk';
 
+
+
 const route = useRoute()
 const id = String(route.params.id)
 let _body:string = ""
@@ -9,6 +11,12 @@ let _body:string = ""
 const {data: article} = await useFetch(`/api/newsDetail`, {
   params: {slug: id}
 })
+
+useHead({
+  title: `${article.value.title} | SPグループ`,
+  meta:[]
+})
+
 
 const cats = article.value.category
 console.log(cats)
@@ -57,7 +65,7 @@ onMounted(() => {
       </div>
     </div>
 
-    <div class="postContainer">
+    <div class="postContainer tw-px-8">
       <div class="postContainer__inner u_mx">
         <div class="topContainer">
           <div class="topContainer__inner">

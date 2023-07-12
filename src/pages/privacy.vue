@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 
+useHead({
+  title: '個人情報保護方針 | SPグループ',
+  meta:[]
+})
+
 const emit = defineEmits(['p_type'])
 
 onMounted(() => {

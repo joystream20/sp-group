@@ -2,6 +2,11 @@
 import { onMounted } from 'vue';
 import { gsap } from 'gsap';
 
+useHead({
+  title: 'トランスポート | SPグループ',
+  meta:[]
+})
+
 const emit = defineEmits(['p_type'])
 
 const _current = ref<string>('')
@@ -19,19 +24,19 @@ const _current = ref<string>('')
 
 const ttl_view = ref<String>('')
 
-const main = ref()
+const sec1 = ref()
 let ctx;
 
 onMounted(() => {
   emit('p_type', 'transport')
 
   ctx = gsap.context((self) => {
-  nextTick(() => {
+  //nextTick(() => {
 
     setTimeout(() => {
 
     
-    const blocks = document.querySelectorAll('.blockContainer-block');
+    const blocks = self.selector('.blockContainer-block');
     blocks.forEach(
       block => {
         gsap.to(block, {
@@ -48,7 +53,11 @@ onMounted(() => {
             },
             onLeaveBack: () => {
               // console.log(block.id+ "- leaveBack")
-              _current.value = block.id
+              //_current.value = block.id
+              const _nextNum = parseInt(block.id.replace('sl',''))-1
+              if(_nextNum > 0){
+                _current.value = "sl"+_nextNum//block.id
+              }
             },
             // markers:true
           }
@@ -57,8 +66,8 @@ onMounted(() => {
 
     },1000)//timeout
 
-    }) //tick
-  }) //ctx
+   // }) //tick
+  },sec1.value) //ctx
 
   nextTick(() => {
     setTimeout(() => {
@@ -99,9 +108,9 @@ onUnmounted(() => {
         <span class="bg u_col1 tw-font-semibold tw-block">スピーディで安全確実にお届けする</span>
         <span class="txt tw-block tw-mt-4">SPグループの運送部門は、バチンコ台、スロット台の流通で培ったノウハウを活かし、一般商品の輸送にもスピーディで安全確実なお届けを実現しています。</span></p>
     </header>
-    <article class="secContainer" ref="main">
+    <article class="secContainer">
       
-        <section class="sec sec1 angle_b_b u_px30">
+        <section class="sec sec1 angle_b_b u_px30" ref="sec1">
           <div class="sec__inner u_mx md:tw-flex">
             <div class="blkNavContainer tw-hidden md:tw-block">
               <ul class="blkNav">
