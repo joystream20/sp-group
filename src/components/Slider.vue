@@ -51,21 +51,21 @@ export default defineComponent({
         'id':1,
         'src':'img_case1_thumb.jpg',
         'href': '/casestudies01',
-        'title':'東北〇〇ホール様のケース',
+        'title':'パチンコホール経営のA法人の事例',
         'text':'自社倉庫維持費<br>運搬コスト<br>不要な台の無駄な保管'
       },
       {
         'id':2,
         'src':'img_case2_thumb.jpg',
-        'href': '',
-        'title':'関西〇〇ホール様のケース',
+        'href': '/casestudies02',
+        'title':'建築資材専門商社Bの事例',
         'text':'管理費<br>倉庫人件費<br>運搬コスト'
       },
       {
         'id':3,
-        'src':'img_case1_thumb.jpg',
-        'href': '/casestudies01',
-        'title':'東北〇〇ホール様のケース',
+        'src':'img_case3_thumb.jpg',
+        'href': '/casestudies03',
+        'title':'飲食店経営C社様の事例',
         'text':'自社倉庫維持費<br>運搬コスト<br>不要な台の無駄な保管'
       }
     ]
@@ -97,9 +97,10 @@ export default defineComponent({
 .carousel__prev{
   border-radius: 50%;
   background: #fff;
-  width:2em;
-  height: 2em;
+  width:clamp(35px, #{pvv(60, 896)},60px);//2em;
+  height: clamp(35px, #{pvv(60, 896)},60px);//2em;
   overflow: hidden;
+  top:40%;
 }
 .carousel__icon {
   width:80%;

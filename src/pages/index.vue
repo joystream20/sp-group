@@ -33,7 +33,7 @@ let tl4,tl5;
 let ctx;
 let ctxImage;
 
-
+const video = ref()
 
 onMounted(() => {
   emit('p_type', 'top')
@@ -43,8 +43,8 @@ onMounted(() => {
   });
 
   nextTick(() => {
-    const video = main.value.querySelector('.videoContainer video')
-
+    const _video = video.value.querySelector('.videoContainer video')
+    console.log('--next tick--', _video);
     setTimeout(() => {
       playVideo()
     },500)
@@ -52,10 +52,11 @@ onMounted(() => {
 
     async function playVideo() {
       try {
-        await video.play()
-        video.addEventListener('ended', () => {
+        await _video.play()
+        // console.log(_video)
+        _video.addEventListener('ended', () => {
           // console.log('loop')
-          video.play()
+          _video.play()
         })
       } catch(err){
         console.log(err)
@@ -262,8 +263,8 @@ const objClass : object = reactive({
 <template>
   <main class="site-main top">
     <div class="heroContainer tw-relative tw-w-full tw-aspect-video" :class="objClass">
-      <div class="videoContainer">
-      <video id="video" src="@/assets/movie/DJI_0015.mp4" muted playsinline autoplay></video>
+      <div class="videoContainer" ref="video">
+      <video id="video" src="@/assets/movie/DJI_0015.mp4" muted playsinline></video>
    </div>
       <div class="imageContainer tw-absolute tw-inset-0 tw-w-full" ref="topImage">
         <div class="imageContainer-image tw-absolute sq1">
