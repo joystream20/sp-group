@@ -43,16 +43,18 @@ const _ua = ref((() => {
 // onUnmounted(() => { console.log('unmounts')})
 // onBeforeMount(() => { console.log('beforeMount') })
 onBeforeUpdate(() => { 
-  console.log('beforeupdate')
+  // console.log('beforeupdate')
  })
 // onUpdated(() => { console.log('updated') })
-onActivated(() => { console.log('onactive') })
+onActivated(() => { 
+  // console.log('onactive') 
+})
 onMounted(() => { 
   
   setTimeout(() => {
     if(isMobile){
     _ua.value = 'mobile'
-    console.log(site.value.classList)
+    // console.log(site.value.classList)
     if(site.value.classList.contains('pc')){
       site.value.classList.remove('pc')
       site.value.classList.add('mobile')
@@ -62,14 +64,14 @@ onMounted(() => {
   }else if(isDesktop){
     _ua.value = 'pc'
   }
-  console.log(_ua.value)
+  // console.log(_ua.value)
   
   },500)
   
   // console.log('onMounted app')
 
 if (process.client) {
-  console.log('process client')
+  // console.log('process client')
   gsap.registerPlugin(ScrollTrigger)
 }
 

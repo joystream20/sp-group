@@ -39,7 +39,7 @@ const sp = ref(false)
 
 
 onMounted(() => {
-  console.log('on Mounted header')
+  //console.log('on Mounted header')
   const _html = <HTMLElement>document.documentElement
   const _header = <HTMLElement>document.getElementById('siteHeader')
   gnav.value = document.getElementById('gnav')
@@ -56,10 +56,10 @@ onMounted(() => {
   }
   const queryMatchEvent = (jud:string) => { 
     if(jud === 'sp'){
-      console.log('sp')
+      // console.log('sp')
       sp.value = true
     }else{
-      console.log('pc')
+      // console.log('pc')
       sp.value = false
       state.value=false
       btnClass.value = ''
@@ -78,7 +78,7 @@ onMounted(() => {
     }else{
       // console.log('sp');
       queryMatchEvent('sp')
-      console.log(state.value)
+      // console.log(state.value)
     }
   }
   mediaQueryList.addEventListener('change', listener)

@@ -37,7 +37,7 @@ onMounted(() => {
       setTimeout(() => {
 
         const blocks = self.selector('.blockContainer-block');
-        console.log(blocks)
+        // console.log(blocks)
         blocks.forEach(
           block => {
             gsap.to(block, {
@@ -49,7 +49,7 @@ onMounted(() => {
                   _current.value = block.id
                 },
                 onLeave: () => {
-                  console.log(block.id + "- leave")
+                  // console.log(block.id + "- leave")
                   // _current.value = block.id
                 },
                 onLeaveBack: () => {

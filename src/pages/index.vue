@@ -39,12 +39,12 @@ onMounted(() => {
   emit('p_type', 'top')
 
   window.addEventListener("DOMContentLoaded", async () => {
-    console.log('window loaded')
+    // console.log('window loaded')
   });
 
   nextTick(() => {
     const _video = video.value.querySelector('.videoContainer video')
-    console.log('--next tick--', _video);
+    // console.log('--next tick--', _video);
     setTimeout(() => {
       playVideo()
     },500)
@@ -63,7 +63,7 @@ onMounted(() => {
       }
     }
 
-    console.log("first=",first.value)
+    // console.log("first=",first.value)
     if(!first.value){
       first.value = true
     }
@@ -244,7 +244,7 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  console.log('clean')
+  //console.log('clean')
   // console.log(ctx)
   emit('t_scroll', 'off')
   ctx.revert(); // <- Easy Cleanup!

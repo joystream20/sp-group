@@ -5,7 +5,7 @@ const route = useRoute()
 const page = Number(route.params.id || 1)
 const catId = String(route.params.catId || "")
 const belongsTo = String(route.query.type || '')
-console.log(route.params.catId)
+//console.log(route.params.catId)
 
 // const {data: news} = await useFetch('/api/newsList',{})
 

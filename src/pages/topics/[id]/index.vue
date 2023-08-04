@@ -18,7 +18,7 @@ useHead({
 })
 
 const cats = article.value.category;
-console.log(cats)
+//console.log(cats)
 // console.log(article.value.category)
 
 const nextQuery :MicroCMSQueries = {
@@ -69,7 +69,7 @@ definePageMeta({
     name: 'page',
     mode: 'out-in',
     onBeforeEnter: (el) => {
-      console.log('before enter')
+      //console.log('before enter')
     }
   }
 })

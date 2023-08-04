@@ -32,7 +32,7 @@ if(_hash){
 
 const { first } = firstTime();
 
-console.log("first=",first.value)
+// console.log("first=",first.value)
 
 
 onMounted(() => {
@@ -52,7 +52,7 @@ onMounted(() => {
       _dt.classList.remove('on')
       _dd.style.maxHeight=""
     }else{
-      console.log(_dd.querySelector('.dd__inner').offsetHeight)
+      // console.log(_dd.querySelector('.dd__inner').offsetHeight)
       _dt.classList.add('on')
       _dd.style.maxHeight = _dd.querySelector('.dd__inner').offsetHeight + "px"
     }

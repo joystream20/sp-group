@@ -13,7 +13,7 @@ const ttl_view = ref<string>('')
 let _cnt = 0;
 onMounted(() => {
   emit('p_type', 'case_studies case2')
-  console.log('monted')
+  // console.log('monted')
 
   setTimeout(() => {
     ttl_view.value = 'on'

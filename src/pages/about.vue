@@ -22,7 +22,7 @@ onMounted(() => {
   emit('p_type', 'about')
   
   nextTick(() => {
-    console.log('tick')
+    // console.log('tick')
     
     const images = elm.value.querySelectorAll('.image')
     // console.log(images)
@@ -135,7 +135,7 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  console.log('clean')
+  // console.log('clean')
   ctx1.revert();
   ctx2.revert();
 

@@ -19,7 +19,7 @@ useHead({
 
 
 const cats = article.value.category
-console.log(cats)
+//console.log(cats)
 
 const nextQuery :MicroCMSQueries = {
   limit:1,

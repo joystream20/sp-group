@@ -105,7 +105,7 @@ onMounted(() => {
 
     setTimeout(() => {
 
-      console.log(listEl.clientWidth)
+      // console.log(listEl.clientWidth)
 
       gsap.to(listEl, {
         x: () => -(listEl.clientWidth - listWrapperEl.clientWidth),
