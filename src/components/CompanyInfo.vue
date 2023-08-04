@@ -111,6 +111,7 @@ background: linear-gradient(90deg, rgba(10,55,110,1) 0%, rgba(10,55,110,1) 31%, 
       left:0;
       color:#fff;
       font-family: $font4;
+      font-style:italic;
       font-size:clamp(37px, #{pvv(86, 1100)}, 86px);
       transform:translate(1em, -80%);
       line-height: .9;
