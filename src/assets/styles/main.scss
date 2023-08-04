@@ -2538,6 +2538,9 @@ $ww : 896;
         gap:20px;
         &-item{
           width:calc(50% - 10px);
+          .txtContainer{
+            padding:.5em 0;
+          }
         }
       }
     }

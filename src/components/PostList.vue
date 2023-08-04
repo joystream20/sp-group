@@ -16,16 +16,16 @@ const { topics } = defineProps<Props>()
         <div class="image">
           <NuxtLink :to="`/topics/${topic.id}`"><img :src="topic.icatch.url" alt=""></NuxtLink>
         </div>
-        <div class="txtContainer tw-flex tw-items-center tw-py-6">
-          <time class="published">{{ $formatDate(String(topic.publishedAt)) }}</time>
+        <div class="txtContainer md:tw-flex tw-items-center">
+          <time class="published tw-mr-4">{{ $formatDate(String(topic.publishedAt)) }}</time>
           <ul class="catList">
-            <li class="catList-item cat tw-ml-4 tw-text-sm btn" v-for="cat in topic.category" :key="cat.id">
-              <NuxtLink :to="`/cats/${cat.id}/page/1`">{{ cat.name }}</NuxtLink>
+            <li class="catList-item cat tw-text-sm btn" v-for="cat in topic.category" :key="cat.id">
+              <NuxtLink :to="`/cats/${cat.id}/page/1`" class="tw-leading-none md:tw-leading-tight">{{ cat.name }}</NuxtLink>
               </li>
           </ul>
         </div>
         <NuxtLink :to="`/topics/${topic.id}`">
-          <h2 class="title tw-font-bold">{{ topic.title }}</h2>
+          <h2 class="title tw-font-bold leading-tight">{{ topic.title }}</h2>
         </NuxtLink>
       </article>
   </div>
