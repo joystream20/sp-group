@@ -1143,7 +1143,7 @@ $ww : 896;
           &-ttl{
             font-size:clamp(52px, #{pvv(146, 1040)}, 146px);
             text-align: left;
-            color:$col3;
+            color:#d4dbe1;
             filter: drop-shadow(2px 3px 4px rgba(10, 55, 110, 0.15));
           }
           &-txt{
@@ -1379,6 +1379,7 @@ $ww : 896;
         .ttlContainer{
           &:before{
             background-image: url(../../assets/images/page/img_hero_back_logistic.jpg);
+            background-position: center center;
           }
         }
         .sec__inner{
@@ -1755,7 +1756,7 @@ $ww : 896;
           &-ttl{
             font-size:clamp(52px, #{pvv(146, 1040)}, 146px);
             text-align: left;
-            color:$col3;
+            color:#d4dbe1;
             filter: drop-shadow(2px 3px 4px rgba(10, 55, 110, 0.15));
           }
           &-txt{
@@ -1835,7 +1836,7 @@ $ww : 896;
           &-ttl{
             font-size:clamp(52px, #{pvv(146, 1040)}, 146px);
             text-align: left;
-            color:$col3;
+            color:#d4dbe1;
             filter: drop-shadow(2px 3px 4px rgba(10, 55, 110, 0.15));
           }
           &-txt{
