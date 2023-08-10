@@ -2245,7 +2245,7 @@ $ww : 896;
             padding-right:clamp(20px, #{pvv(50, 1100)}, 50px);
           }
           .probList{
-            padding:1.5em 2em;
+            padding:1.5em 1em;
             width:100%;
             max-width: 520px;
             margin-left:auto;
@@ -3470,6 +3470,16 @@ $ww : 896;
           }
         }
         &.case_studies{
+          .probContainer{
+            .probList{
+              padding:1.5em 2em;
+            }
+          }
+          .solContainer{
+            .solList{
+              padding:1.5em 2em;
+            }
+          }
           .ttlContainer{
             .anm_t{
               display: flex;
