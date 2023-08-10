@@ -133,6 +133,7 @@ onUnmounted(() => {
       text-align: center;
       .en{
         font-family:$font4;
+        font-style:italic;
         display: block;
         font-size:clamp(24px,#{pvv(35, 896)} ,35px);
       }
