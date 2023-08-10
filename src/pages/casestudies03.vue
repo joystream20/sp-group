@@ -52,9 +52,9 @@ onMounted(() => {
                 <dt>課題</dt>
                 <dd>
                   <ul class="list">
-                    <li class="list-item">自社倉庫維持費がかかる</li>
-                    <li class="list-item">運搬コストが高い</li>
-                    <li class="list-item">不要な台の無駄な保管</li>
+                    <li class="list-item">ムダな保管備品を抱えてしまっている</li>
+                    <li class="list-item">運送車両の不足による非効率的な配送</li>
+                    <li class="list-item">イベント等での大量車両の確保が出来ない</li>
                   </ul>
                 </dd>
               </dl>
@@ -66,24 +66,25 @@ onMounted(() => {
         <div class="solContainer proc ">
             <div class="angle_b_b">
               <div class="proc__inner u_mx">
-                <!-- <div class="imageContainer tw-text-center">
+                <div class="imageContainer tw-text-center">
                   <div class="block">
                     <p class="ttl">SPグループ契約以前</p>
                     <div class="image">
-                      <img src="@/assets/images/case/img_case2_1.png" width="660" alt="">
+                      <img src="@/assets/images/case/img_case3_1.png" width="660" alt="">
                     </div>
-                    <p class="txt">遠方への輸送でコスト増大<br>必要車両の確保が困難で輸送遅トラブルも…</p>
+                    <p class="txt">ルート配送の為の車両が足りず、食品工場と店舗を何回も往復…<br>
+                    バックヤードの備品管理を店舗主導で行っている為<br class="u_pc">
+                    本社で一括管理できず…</p>
                   </div>
                   <div class="block">
                     <p class="ttl _sp">すべての業務をSPグループに依頼</p>
                     <div class="image">
-                      <img src="@/assets/images/case/img_case2_2.png" width="660" alt="">
+                      <img src="@/assets/images/case/img_case3_2.png" width="660" alt="">
                     </div>
-                    <p class="txt">セブンピース倉庫を神奈川県内への納品拠点に<br>
-                    多種多様な車両を確保している為、スムーズな納品も可能<br>
-                    定期的な棚卸で在庫ロスも減少</p>
+                    <p class="txt">ルート配送にセブンピースのトラックを使用、<br class="u_sp">効率的な配送が可能に<br>
+                    バックヤードに保管していた備品を<br class="u_sp">SP倉庫で一元管理。保管備品が明瞭に！</p>
                   </div>
-                </div> -->
+                </div>
               </div>
             </div>
             <div class="solListContainer tw-text-center u_mx">
