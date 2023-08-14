@@ -52,21 +52,21 @@ export default defineComponent({
         'src':'img_case1_thumb.jpg',
         'href': '/casestudies01',
         'title':'パチンコホール経営のA法人の事例',
-        'text':'自社倉庫維持費<br>運搬コスト<br>不要な台の無駄な保管'
+        'text':'自社倉庫維持費がかかる<br>運搬コストが高い<br>不要な台の無駄な保管'
       },
       {
         'id':2,
         'src':'img_case2_thumb.jpg',
         'href': '/casestudies02',
         'title':'建築資材専門商社Bの事例',
-        'text':'管理費<br>倉庫人件費<br>運搬コスト'
+        'text':'自社倉庫維持費がかかる<br>運搬コストが高い<br>不要な台の無駄な保管'
       },
       {
         'id':3,
         'src':'img_case3_thumb.jpg',
         'href': '/casestudies03',
         'title':'飲食店経営C社様の事例',
-        'text':'自社倉庫維持費<br>運搬コスト<br>不要な台の無駄な保管'
+        'text':'ムダな保管備品を抱えてしまっている<br>運送車両の不足による非効率的な配送<br>イベント等での大量車両の確保が出来ない'
       }
     ]
   })
