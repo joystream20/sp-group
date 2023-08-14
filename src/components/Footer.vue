@@ -38,7 +38,7 @@ onMounted(() => {
                   <span class="num u_ff3 tw-flex tw-justify-center tw-items-center tw-text-5xl tw-leading-none tw-tracking-widest"><SvgPhone />03-5763-7770</span>
                 </a>
               </div>
-              <div><a class="mail tw-inline-block"><span class="txt tw-flex tw-justify-center tw-items-center tw-text-xl"><SvgMail />メールでのお問い合わせ</span></a></div>
+              <div><a href="mailto:info@sevenpeace.com" class="mail tw-inline-block"><span class="txt tw-flex tw-justify-center tw-items-center tw-text-xl"><SvgMail />メールでのお問い合わせ</span></a></div>
             </div>
         </div>
       </div>

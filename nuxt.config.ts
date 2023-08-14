@@ -23,6 +23,9 @@ export default defineNuxtConfig({
   },
   app: {
     head:{
+      meta: [
+        {name: "google-site-verification", content: "CIg6pAk9glMQ6WBSQEGMS-tX4nCX1kPF4Qs0rrazWv4"}
+      ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         {

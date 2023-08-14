@@ -495,7 +495,7 @@ const objClass : object = reactive({
               </div>
             </div>
             <div class="mailContainer tw-text-center tw-mt-12 md:tw-mt-24">
-              <a class="mail u_bgcol2 tw-inline-block"><span class="txt u_col1 tw-flex tw-items-center tw-text-4xl tw-font-semibold"><SvgMail />メールでのお問い合わせ</span></a>
+              <a href="mailto:info@sevenpeace.com" class="mail u_bgcol2 tw-inline-block"><span class="txt u_col1 tw-flex tw-items-center tw-text-4xl tw-font-semibold"><SvgMail />メールでのお問い合わせ</span></a>
             </div>
           </div>
         </div>
