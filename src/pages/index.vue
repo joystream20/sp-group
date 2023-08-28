@@ -491,7 +491,7 @@ const objClass : object = reactive({
                 <a href="tel:0357637770" class="tel tw-inline-block">
                   <span class="num u_ff3 tw-flex tw-items-center tw-text-6xl md:tw-text-10xl tw-leading-none tw-tracking-widest"><SvgPhone />03-5763-7770</span>
                 </a>
-                <p class="txt tw-text-right tw-text-xl">受付時間　平日10:00~19:00</p>
+                <p class="txt tw-text-right tw-text-xl">受付時間　平日10:00~17:00</p>
               </div>
             </div>
             <div class="mailContainer tw-text-center tw-mt-12 md:tw-mt-24">

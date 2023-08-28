@@ -400,11 +400,7 @@ onUnmounted(() => {
                         <dd>〒210-0869 神奈川県川崎市川崎区東扇島19-2 ロジポート東扇島C棟2階-Ｇ<br>
                         TEL：044-281-2415　　FAX：044-281-2416</dd>
                       </div>
-                      <div class="groupInnerList-item">
-                        <dt>埼玉営業所</dt>
-                        <dd>〒339-0073 埼玉県さいたま市岩槻区上野6−11−22<br>
-                        TEL：048-793-1181　　FAX：048-793-1182</dd>
-                      </div>
+                      
                     </dl>
                   </div>
                 </dd>
@@ -414,8 +410,7 @@ onUnmounted(() => {
                   <img src="@/assets/images/page/img_company_sec3_list_ttl_03.png" height="52" alt="KOKO PLANNING">
                   <h3 class="name max-md:tw-block tw-font-semibold mac-md:tw-mt-4 md:tw-px-8">株式会社ココプランニング</h3>
                   <div class="tw-flex tw-items-center max-md:tw-mt-4 md:tw-flex-1">
-                    <span class="content tw-text-sm">東京都経営革新計画承認企業<br>
-                    事業内容：新台・中古台販売、遊技機設置</span>
+                    <span class="content tw-text-sm">事業内容：新台・中古台販売、遊技機設置</span>
                     <SvgAngleDown />
                   </div>
                 </dt>
@@ -468,16 +463,11 @@ onUnmounted(() => {
                       </div>
                       <div class="groupInnerList-item">
                         <dt>本社所在地</dt>
-                        <dd>〒140-0012 東京都品川区勝島1-3-49　加瀬ビル116　7Ｆ<br>
-                        TEL：03-5763-7775　　FAX：03-5763-7771</dd>
-                      </div>
-                      <div class="groupInnerList-item">
-                        <dt>上野営業所</dt>
                         <dd>〒110-0015　東京都台東区東上野3-16-1　佐野ビル1F、2F<br>
                         TEL：03-3837-9555　　FAX：03-3837-9557</dd>
                       </div>
                       <div class="groupInnerList-item">
-                        <dt>福岡営業所（株式会社ソリッド内）</dt>
+                        <dt>福岡営業所</dt>
                         <dd>〒818-0041 福岡県筑紫野市上古賀4-16-3　オフィスパレア筑紫野ⅡA-1<br>
                         TEL：092-555-2720　　FAX：092-555-2721</dd>
                       </div>
@@ -519,7 +509,7 @@ onUnmounted(() => {
                       </div>
                       <div class="groupInnerList-item">
                         <dt>主要取引銀行</dt>
-                        <dd>西日本シティ銀行　　二日市支店</dd>
+                        <dd>西日本シティ銀行・みずほ銀行</dd>
                       </div>
                       <div class="groupInnerList-item">
                         <dt>本社所在地</dt>
@@ -567,66 +557,57 @@ onUnmounted(() => {
               <div class="tieupList-item tw-mb-12">
                 <dt class="tw-font-semibold tw-text-2xl">アクティブ株式会社</dt>
                 <dd>
-                  事業内容：コンピュータ利用に関するコンサルタント、ソフトウェア開発、ソフトウェア販売、機器販売<br>
-                  〒064-0808 北海道札幌市中央区南8条西4丁目422番地5　グランドパークビル<br>
-                  TEL：011-520-6388　　FAX：011-520-6389<br>
-                  URL： http://www.actweb.co.jp/
+                  〒064-0808 北海道札幌市中央区南8条西4丁目422番<br>
+                  URL：<a href="http://www.actweb.co.jp/" target="_blank">http://www.actweb.co.jp/</a>
                 </dd>
               </div>
               <div class="tieupList-item tw-mb-12">
                 <dt class="tw-font-semibold tw-text-2xl">株式会社丸和</dt>
                 <dd>
-                  事業内容：全国遊技機配送<br>
                   〒353-0001 埼玉県志木市上宗岡2-8-63<br>
-                  TEL：048-475-1808　　FAX：048-476-5564
-                </dd>
-              </div>
-              <div class="tieupList-item tw-mb-12">
-                <dt class="tw-font-semibold tw-text-2xl">株式会社エス・ピー・ジー</dt>
-                <dd>
-                  事業内容：アミューズメント業界向け、各種プロモーションツールの企画・デザイン・制作<br>
-                  〒105-0013 東京都港区浜松町2-10-10　第二小林ビル５Ｆ<br>
-                  TEL：03-3434-5221　　FAX：03-3434-5223
+                  URL：<a href="https://maruwa-transport.net/" target="_blank">https://maruwa-transport.net/</a>
                 </dd>
               </div>
               <div class="tieupList-item tw-mb-12">
                 <dt class="tw-font-semibold tw-text-2xl">ラッキー運輸株式会社</dt>
-                <dd>事業内容：全国遊技機配送<br>
-                  〒003-0871　北海道札幌市白石区米里1条2-6-6
+                <dd>〒003-0871　北海道札幌市白石区米里1条2-6-6<br>
+                  URL：<a href="https://www.luckyunyu.co.jp/" target="_blank">https://www.luckyunyu.co.jp/</a>
                 </dd>
               </div>
               <div class="tieupList-item tw-mb-12">
                 <dt class="tw-font-semibold tw-text-2xl">株式会社光運送</dt>
                 <dd>
                   〒702-8055　岡山県岡山市中区江崎277-1<br>
-                  事業内容：全国遊技機配送
-                </dd>
-              </div>
-              <div class="tieupList-item tw-mb-12">
-                <dt class="tw-font-semibold tw-text-2xl">株式会社ソラル</dt>
-                <dd>
-                  東京都品川区勝島1-3-49 加瀬ビル116 7F<br>
-                  TEL：03-5763-7773
+                  URL：<a href="https://hikari-oky.com/" target="_blank">https://hikari-oky.com/</a>
                 </dd>
               </div>
               <div class="tieupList-item tw-mb-12">
                 <dt class="tw-font-semibold tw-text-2xl">SALES　GO株式会社</dt>
                 <dd>
-                  〒140-0002　東京都品川区東品川四丁目13-14グラスキューブ品川
+                  〒140-0002　東京都品川区東品川四丁目13-14グラスキューブ品川<br>
+                  URL：<a href="https://salesgo.co.jp/" target="_blank">https://salesgo.co.jp/</a>
                 </dd>
               </div>
+
               <div class="tieupList-item tw-mb-12">
                 <dt class="tw-font-semibold tw-text-2xl">株式会社クラッチコミュニケーション</dt>
                 <dd>
-                  〒106-0046 東京都港区元麻布３丁目１?35VORT 5F<br>
-                  TEL：03-6435-2510
+                  〒106-0046 　東京都港区元麻布3-1-35　VORT元麻布5階<br>
+                  URL：<a href="https://www.clutch-communication.jp/" target="_blank">https://www.clutch-communication.jp/</a>
                 </dd>
               </div>
               <div class="tieupList-item tw-mb-12">
                 <dt class="tw-font-semibold tw-text-2xl">株式会社サンライン</dt>
                 <dd>
                   〒412-0047　静岡県御殿場市神場2丁目10番<br>
-                  TEL：0550-80-3288
+                  URL：<a href="https://www.e-sunline.co.jp/" target="_blank">https://www.e-sunline.co.jp/</a>
+                </dd>
+              </div>
+              <div class="tieupList-item tw-mb-12">
+                <dt class="tw-font-semibold tw-text-2xl">有限会社ジョイストリーム</dt>
+                <dd>
+                  〒107-0052　東京都港区赤坂8-4-3 エルマノス赤坂2-C<br>
+                  URL：<a href="https://www.joystream.co.jp/" target="_blank">https://www.joystream.co.jp/</a>
                 </dd>
               </div>
             </dl>

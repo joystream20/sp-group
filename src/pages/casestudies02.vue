@@ -70,7 +70,7 @@ onMounted(() => {
                     <div class="image">
                       <img src="@/assets/images/case/img_case2_1.png" width="660" alt="">
                     </div>
-                    <p class="txt">遠方への輸送でコスト増大<br>必要車両の確保が困難で輸送遅トラブルも…</p>
+                    <p class="txt">遠方への輸送でコスト増大<br>必要車両の確保が困難で輸送遅延トラブルも…</p>
                   </div>
                   <div class="block">
                     <p class="ttl _sp">すべての業務をSPグループに依頼</p>
