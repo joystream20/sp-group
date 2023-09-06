@@ -7,7 +7,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 useHead({
   title: 'SPグループ',
   meta: [
-    {name: 'description', content: 'SPグループでは、すべての業務を包括し、お客様にワンストップでご提供しています。それが、他社にはない、SPグループの大きな強みです。'}
+    {name: 'description', content: 'SPグループでは、すべての業務を包括し、お客様にワンストップでご提供しています。それが、他社にはない、SPグループの大きな強みです。'},
+    {property: "og:locale", content:'ja_JP'},
+    {property: 'og:site_name', content:'SPグループ'},
+    {property: 'og:title', content:'SPグループ'},
+    {property: 'og:description', content: 'SPグループでは、すべての業務を包括し、お客様にワンストップでご提供しています。それが、他社にはない、SPグループの大きな強みです。'},
+    {property: 'og:url', content: 'https://www.sevenpeace.com/'},
+    {property: 'og:image', content: '/OGP.png'}
   ]
 })
 
