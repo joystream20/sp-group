@@ -50,9 +50,9 @@ onMounted(() => {
                 <dt>課題</dt>
                 <dd>
                   <ul class="list">
-                    <li class="list-item">自社倉庫維持費がかかる</li>
-                    <li class="list-item">運搬コストが高い</li>
-                    <li class="list-item">不要な台の無駄な保管</li>
+                    <li class="list-item">神奈川県での運送拠点が無い</li>
+                    <li class="list-item">運送コストが高い</li>
+                    <li class="list-item">運送箇所が多種多様で、対応できる車両の不足</li>
                   </ul>
                 </dd>
               </dl>
