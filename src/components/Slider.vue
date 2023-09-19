@@ -59,7 +59,7 @@ export default defineComponent({
         'src':'img_case2_thumb.jpg',
         'href': '/casestudies02',
         'title':'建築資材専門商社Bの事例',
-        'text':'自社倉庫維持費がかかる<br>運搬コストが高い<br>不要な台の無駄な保管'
+        'text':'神奈川県での運送拠点が無い<br>運搬コストが高い<br>運送箇所が多種多様で、対応できる車両の不足'
       },
       {
         'id':3,
