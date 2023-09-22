@@ -2227,6 +2227,9 @@ $ww : 896;
         }
       }
       &.case_studies{
+        .test{
+          display: flex;
+        }
         .ttlContainer{
           .anm_t{
             // padding-right:0;
