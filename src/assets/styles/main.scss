@@ -850,6 +850,20 @@ $ww : 896;
                   margin-right:auto;
                   &-item{
                     margin-bottom:4rem;
+                    .image{
+                      a{
+                        display: block;
+                        aspect-ratio: 1 / .75;
+                      }
+                      img{
+                        object-fit: cover;
+                        width:100%;
+                        height:100%;
+                      }
+                    }
+                    .txtContainer{
+                      padding:.5em 0;
+                    }
                   }
                 }
               }
