@@ -211,7 +211,7 @@ onUnmounted(() => {
                   </li>
                   <li class="spList-item item4">
                     <h4 class="sp-ttl">キャリア</h4>
-                    <p class="sp-txt">人材紹介</p>
+                    <p class="sp-txt">人材紹介<br>人材派遣</p>
                     <div class="l_image">
                       <NuxtLink :to="`https://sp-career.com/`" class="link" target="_blank">
                         <img src="@/assets/images/page/img_company_sec3_list_ttl_05.png" alt="SPキャリア.com" height="24">

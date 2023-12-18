@@ -343,7 +343,7 @@ const objClass : object = reactive({
                   <li class="spList-item item4">
                     <div class="inner">
                       <h4 class="sp-ttl">キャリア</h4>
-                      <p class="sp-txt">人材紹介</p>
+                      <p class="sp-txt">人材紹介<br>人材派遣</p>
                     </div>
                   </li>
                 </ul>

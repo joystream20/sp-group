@@ -300,6 +300,14 @@ onUnmounted(() => {
                         <dd>神奈川県公安委員会　第452660004392号</dd>
                       </div>
                       <div class="groupInnerList-item">
+                        <dt>有料職業紹介事業免許</dt>
+                        <dd>13-ユ-314798</dd>
+                      </div>
+                      <div class="groupInnerList-item">
+                        <dt>労働者派遣事業許可番号</dt>
+                        <dd>派 13-316973</dd>
+                      </div>
+                      <div class="groupInnerList-item">
                         <dt>加盟社団法人</dt>
                         <dd>一般社団法人日本遊技関連事業協会・一般社団法人余暇環境整備推進協議会</dd>
                       </div>
