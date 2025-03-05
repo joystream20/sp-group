@@ -599,13 +599,6 @@ onUnmounted(() => {
               </div>
 
               <div class="tieupList-item tw-mb-12">
-                <dt class="tw-font-semibold tw-text-2xl">株式会社クラッチコミュニケーション</dt>
-                <dd>
-                  〒106-0046 　東京都港区元麻布3-1-35　VORT元麻布5階<br>
-                  URL：<a href="https://www.clutch-communication.jp/" target="_blank">https://www.clutch-communication.jp/</a>
-                </dd>
-              </div>
-              <div class="tieupList-item tw-mb-12">
                 <dt class="tw-font-semibold tw-text-2xl">株式会社サンライン</dt>
                 <dd>
                   〒412-0047　静岡県御殿場市神場2丁目10番<br>
